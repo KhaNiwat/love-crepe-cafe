@@ -1,0 +1,83 @@
+body{
+  background-color: #FFC0CB;
+}
+.mobile {
+  margin: 0 auto; 
+  padding: 0;
+  background-image: url("../img/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-size: auto; */
+  height: 100vh;
+  width: 390px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.lang{
+  display: flex;
+  justify-content: end;
+}
+.selectOption{
+  text-align: left;
+  width: 120px;
+  margin: 10px;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 16px;
+}
+.button {
+  margin: 5px 0;
+  background-color: #FF69B4;
+  color: #ffffff;
+  width: 350px;
+  height: 70px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 16px;
+  border: #FF69B4;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: space-between;
+}
+/*ไอแพด */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .mobile{
+    width: auto;
+    background-size: cover;
+    
+  }
+  .button{
+  }
+}
+
+/* มือถือและไอแพด */
+@media  screen and (max-width: 768px) {
+  .mobile{
+    width: auto;
+    margin: 0 auto; 
+    /* background-size: cover; */
+  }
+  .footer{
+    text-align: center;
+  }
+}
+
+
+/* มือถือ */
+@media only screen and (max-width: 600px){
+  .mobile{
+    width: auto;
+    height: 100vh;
+    /* background-size: cover; */
+  }
+} 
+
+
+
+
