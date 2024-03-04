@@ -1,0 +1,14 @@
+nav{
+    background-color: #DF5C6C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.logo img{
+    width: 80px;
+}
+.back, .bar{
+    color: white;
+    font-size: 40px;
+}
