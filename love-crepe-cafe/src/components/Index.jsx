@@ -13,8 +13,8 @@ export default function Index() {
       </div>
 
       <div className={styles.footer}>
-        <button className={styles.button}>Eat in</button> 
-        <button className={styles.button}>Take away</button>
+        <a href=""><button className={styles.button}>Eat in</button> </a>
+        <a href=""><button className={styles.button}>Take away</button> </a>
       </div>
     </div>
   );

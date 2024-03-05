@@ -8,6 +8,7 @@ export default class Navbar extends Component {
   render() {
     return (
         <nav>
+          <div className={Styles.navbar}>
           <div className={Styles.back}>
             <FontAwesomeIcon icon={faArrowAltCircleLeft} />
           </div>
@@ -17,6 +18,8 @@ export default class Navbar extends Component {
           <div className={Styles.bar}>
             <FontAwesomeIcon icon={faBars} /> 
           </div>
+          </div>
+
         </nav>
     );
   }

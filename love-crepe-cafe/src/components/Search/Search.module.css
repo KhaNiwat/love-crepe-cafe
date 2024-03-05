@@ -1,0 +1,114 @@
+.container {
+    margin: 8px auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2rem;
+    border: 2px solid #A1A1A1;
+    border-radius: 30px;
+    outline: none;
+    color: #0d0c22;
+    transition: .3s ease;
+}
+
+.input::placeholder {
+    color: #A1A1A1;
+}
+
+.input:focus,
+input:hover {
+    border-color: #DF5C6C;
+    
+}
+
+.icon {
+    position: absolute;
+    padding: 10px;
+    left: 1rem;
+    fill: #9e9ea7;
+    color: #A1A1A1;
+}
+/* 1024px */
+@media only screen and (min-width: 1024px) {
+    .container {
+        margin: 1rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .group{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* 768px */
+@media only screen and (min-width: 768px) {
+    .container {
+        margin: 1rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .group{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .group .input {
+        width:80%;
+    }
+
+}
+
+/* 480px */
+@media only screen and (max-width: 480px) {
+    .container {
+        width: 100%;
+        margin: 1rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .group .input {
+        width:90%;
+    }
+    .icon{
+        padding: 10px;
+    }
+}
+
+/* 390px */
+@media only screen and (max-width: 390px) {
+    .container {
+        width: 100%;
+        margin: 1rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .group .input {
+        width:80%;
+    }
+    .icon {
+        position: absolute;
+        padding: 10px;
+    }
+}

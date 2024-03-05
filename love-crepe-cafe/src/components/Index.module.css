@@ -1,13 +1,12 @@
-body{
+/* body{
   background-color: #FFC0CB;
-}
+} */
 .mobile {
   margin: 0 auto; 
   padding: 0;
   background-image: url("../img/bg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-size: auto; */
   height: 100vh;
   width: 390px;
   border: none;
@@ -45,39 +44,54 @@ body{
   align-items: center; 
   justify-content: space-between;
 }
-/*ไอแพด */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .mobile{
-    width: auto;
-    background-size: cover;
-    
-  }
-  .button{
-  }
-}
 
-/* มือถือและไอแพด */
-@media  screen and (max-width: 768px) {
+/* 1024px */
+@media  only screen and (min-width: 1200px) {
   .mobile{
-    width: auto;
-    margin: 0 auto; 
-    /* background-size: cover; */
+    width: 30%;
   }
   .footer{
-    text-align: center;
+    margin: 100px;
   }
+
 }
-
-
-/* มือถือ */
-@media only screen and (max-width: 600px){
+/* 768px */
+@media  screen and (max-width: 768px) {
+  .mobile{
+    margin: 0 auto; 
+    padding: 0px 10px;
+    background-image: url("../img/bg.png");
+    background-size: cover;
+    height: 100vh;
+    width: 70%;
+    border: none;
+    display: flex;
+    flex-direction: column;
+  }
+ .footer{
+  padding: 100px;
+ }
+}
+/* 480px */
+@media only screen and (max-width: 480px){
   .mobile{
     width: auto;
-    height: 100vh;
-    /* background-size: cover; */
+  }
+  .footer{
+    display: flex;
+    justify-content: center;
+    padding: 100px 0; 
   }
 } 
 
-
-
-
+/* 390px */
+@media only screen and (max-width: 390px){
+  .mobile{
+    width: auto;
+  }
+  .footer{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0; 
+  }
+} 
