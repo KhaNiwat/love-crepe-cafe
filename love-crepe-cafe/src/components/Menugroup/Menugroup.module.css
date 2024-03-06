@@ -11,6 +11,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 100%;
 }
 .box {
     display: flex;
@@ -25,62 +26,94 @@
 }
 .box img{
     padding: 10px 10px;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border-radius: 20px;
     border: 1px solid #A1A1A1; 
 }
 .box img:hover{
     background-color: #FFC0CB;
 }
-a {
+.box a {
     text-decoration: none;
     color: #A1A1A1;
 }
-a:hover{
+a .textDecoration a:hover{
     color: #FFC0CB;
 }
 
-
-
-
-
-/* 768px */
-@media only screen and (min-width: 768px) {
+/* 1024px */
+@media only screen and (max-width: 1024px) {
     .container {
-        width: 100%;
-        margin:  auto;
+        max-width: 100%;
+        margin: auto auto;
     }
     .menugroup{
-        margin: 1rem 0;
-        gap: 10%;
+        gap: 40%;
+        margin: auto auto;
     }
+
     .box img{
-        padding: 10px 10px;
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        border: 1px solid #A1A1A1; 
+    }
+}
+
+/* 768px */
+@media only screen and (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        margin: auto auto;
+    }
+    .menugroup{
+        gap: 30%;
+        margin: auto auto;
+    }
+
+    .box img{
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+        border: 1px solid #A1A1A1; 
     }
 }
 
 /* 480px */
 @media only screen and (max-width: 480px) {
     .container {
-        width: 100%;
+        max-width: 100%;
         margin: auto auto;
     }
     .menugroup{
-        margin: auto;
-        gap: 8%;
+        gap: 30px;
+        margin: auto auto;
+    }
+
+    .box img{
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+        border: 1px solid #A1A1A1; 
     }
 }
 
 /* 390px */
 @media only screen and (max-width: 390px) {
     .container {
-        width: 100%;
-        margin: 8px auto;
+        max-width: 100%;
+        margin: auto 1rem;
     }
     .menugroup{
-        gap: 5%;
+        gap: 30px;
+        margin: auto auto;
+    }
+
+    .box img{
+        width: 60px;
+        height: 60px;
+        border-radius: 20px;
+        border: 1px solid #A1A1A1; 
     }
 }

@@ -4,6 +4,8 @@ import Search from './components/Search/Search.jsx';
 import SearchAppBar from './components/Search/SearchAppBar.jsx'
 import Shownenu from './components/Shownenu/Shownenu.jsx'
 import Menugroup from './components/Menugroup/Menugroup.jsx';
+import Listmenu from  './components/Listmenu/Listmenu.jsx';
+import Addanddel from './components/addanddel/addanddel.jsx';
 function App() {
   return (
     <div className="App">
@@ -12,6 +14,8 @@ function App() {
       <Search /> 
       <Menugroup />
       <Shownenu />
+      <Listmenu />
+      
     </div>
   );
 }

@@ -18,19 +18,19 @@ export default function Menugroup() {
 
     <div className={styles.container}>
       <div className={styles.menugroup}>{/* เมนู */}
-      <a className={styles.box} href="#"><img src={img1} alt="img1"/>
+      <a className={styles.box} href="#" style={{textDecoration: 'none', color: '#A1A1A1'}}><img src={img1} alt="img1"/>
       All
       </a>
 
-      <a className={styles.box} href="#"><img src={img1} alt="img1"/>
+      <a className={styles.box} href="#" style={{textDecoration: 'none', color: '#A1A1A1'}}><img src={img1} alt="img1"/>
       Food
       </a>
 
-      <a className={styles.box} href="#"><img src={img1} alt="img1"/>
+      <a className={styles.box} href="#" style={{textDecoration: 'none', color: '#A1A1A1'}}><img src={img1} alt="img1"/>
       Dessert
       </a>
 
-      <a className={styles.box} href="#"><img src={img1} alt="img1"/>
+      <a className={styles.box} href="#" style={{textDecoration: 'none', color: '#A1A1A1'}}><img src={img1} alt="img1"/>
       Drink
       </a>
       </div>

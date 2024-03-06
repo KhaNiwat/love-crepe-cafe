@@ -1,160 +1,161 @@
-.conshow{
-    display: grid;
-    align-items: center;
-    justify-content: left;
-    width: auto;
-    margin: 8px auto;
+h3 {
     padding: 0 10px;
 }
-h3{
-    margin: auto 5%;
+
+.box {
+    width: 100%;
+    padding: 1fr;
+    margin: 8px auto;
 }
-.grid_container{
+
+.card {
+    background-color: pink;
+    padding: 5px;
+    border-radius: 20px;
+}
+.namemanu {
+    text-align: left;
+    padding: 0 5px;
+}
+.namemanu p{
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 ;
+}
+
+.boximg {
+    display: grid;
+    justify-content: center;
+    align-items: center; /* เพิ่มการจัดให้อยู่ตรงกลางในแนวตั้ง */
+}
+
+.boximg img {
+    width: 80%;
+    justify-self: center; /* เพิ่มการจัดให้รูปภาพอยู่ตรงกลางในแนวนอน */
+    align-self: center; /* เพิ่มการจัดให้รูปภาพอยู่ตรงกลางในแนวตั้ง */
+}
+
+.container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: auto auto;
+    padding: 5px;
+}
+
+.quantity {
+    margin: 0 0;
+}
+
+.price p {
+    margin: 0 0;
+    font-size: 24px;
+    color: rgba(201, 170, 5, 1);
+    font-weight: 500;
+}
+.quantity {
+    width: 100%;
     display: grid;
     justify-items: center;
     align-items: center; 
-    grid-template-columns: auto auto auto auto;
-    width: auto;
-    gap: 10px;
-    margin: 0;
+    grid-template-columns: auto auto auto; 
 }
-
-.card{
-    width: auto;
-    height: auto;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 8px;
-    border-radius: 20px;
-    background-color: rgba(255, 192, 203, 0.4);
-}
-.boximg img{
-    width: 80%;
-}
-.griditem .card .namemanu p{
-    text-align: left;
-}
-.container{
-    display: grid;
-    grid-template-columns: auto auto ;
-    align-items: center;
-}
-.quantity{
-    margin: 0 10px;
-    display: flex;
+.quantity button{
     font-size: 16px;
-}
-.container .quantity button{
     background: none;
     border: none;
 }
 
-/* 1024px */
-@media only screen and (min-width: 1024px) {
-    .conshow{
-        margin: 8px auto;
-       }
-    .grid_container{
-        display: grid;
-        justify-items: center;
-        align-items: center; 
-        grid-template-columns: auto auto auto auto;
-        width: auto;
-        gap: 10px;
-    }
-}
-
 /* 768px */
-@media only screen and (min-width: 768px) {
-
-    .conshow{
-        margin: auto auto;
-       }
-    .grid_container{
+@media only screen and (max-width: 768px) {
+    .namemanu p{
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .price{
+        width: 100%;
+    }
+    .price p{
+        font-size: 18px;
+        color: rgba(201, 170, 5, 1);
+        font-weight: 500;
+    }
+    .container{
+        grid-template-columns: auto auto;
+    }
+    .quantity {
+        width: auto;
         display: grid;
         justify-items: center;
-        align-items: center; 
-        grid-template-columns: auto auto auto;
-        width: auto;
-        gap: 10px;
-        margin: 10px;
-    }
-    .card{
-        width: auto;
-        height: auto;
-        display: grid;
         align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 8px;
-        border-radius: 20px;
+        grid-template-columns: auto auto auto;
     }
-    .boximg img{
-        width: 80%;
-    }
-
 }
 
 /* 480px */
 @media only screen and (max-width: 480px) {
-    .conshow{
-        margin: 8px auto;
-       }
-    .grid_container{
-        margin: 1rem auto;
+    .namemanu p{
+        font-size: 18px;
+        font-weight: 500;
+    }
+    .price{
+        width: 100%;
+    }
+    .price p{
+        font-size: 18px;
+        color: rgba(201, 170, 5, 1);
+        font-weight: 500;
+    }
+    .container{
+        grid-template-columns: auto auto;
+    }
+    .quantity {
+        width: auto;
         display: grid;
         justify-items: center;
-        align-items: center; 
-        grid-template-columns: auto auto ;
-        width: auto;
-    }
-    
-    .card{
-        width: auto;
-        height: auto;
-        display: grid;
         align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 8px;
-        border-radius: 20px;
-        background-color: rgba(255, 192, 203, 0.4);
-    }
-    .boximg img{
-        width: 100%;
+        grid-template-columns: auto auto auto;
     }
 }
 
-
 /* 390px */
 @media only screen and (max-width: 390px) {
-    .conshow{
-     margin: 8px auto;
+    .namemanu p {
+        text-align: left;
+        font-size: 18px;
+        margin: 0 1px;
+        font-weight: 500;
+        
     }
-    .grid_container{
-        margin: 1rem auto;
+
+    .price {
+        width: 100%;
+    }
+
+    .price p {
+        font-size: 16px;
+        color: rgba(201, 170, 5, 1);
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .quantity {
+        width: auto;
         display: grid;
         justify-items: center;
-        align-items: center; 
-        grid-template-columns: auto auto ;
-        width: auto;
-        gap: 10px;
-    }
-    
-    .card{
-        width: auto;
-        height: auto;
-        display: grid;
         align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 8px;
-        border-radius: 20px;
-        background-color: rgba(255, 192, 203, 0.4);
+        grid-template-columns: auto auto auto;
     }
-    .boximg img{
-        width: 80%;
+
+    .quantity button {
+        font-size: 16px;
+        background: none;
+        border: none;
+
+    }
+
+    .container {
+        grid-template-columns: auto auto;
+
     }
 }

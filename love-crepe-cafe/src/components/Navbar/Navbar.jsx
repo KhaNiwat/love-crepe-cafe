@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Styles from "./navbar.module.css"; // Correct the import statement
+import Styles from "./navbar.module.css"; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faArrowAltCircleLeft,faShoppingBasket } from '@fortawesome/free-solid-svg-icons'; 
 import logo from '../../img/logo.png';
-import { faBars, faArrowAltCircleLeft } from '@fortawesome/free-solid-svg-icons'; 
-
 export default class Navbar extends Component {
   render() {
     return (
@@ -15,9 +14,16 @@ export default class Navbar extends Component {
           <div className={Styles.logo}> 
             <img src={logo} alt="Logo" />
           </div>
+          
+          {/* ถ้ามีการสั่งซื้อ โชว? ไอคอน ตระกร้า */}
+          {/* <div className={Styles.bar}>
+          <FontAwesomeIcon icon={faShoppingBasket} />
+          </div> */}
+
           <div className={Styles.bar}>
             <FontAwesomeIcon icon={faBars} /> 
           </div>
+
           </div>
 
         </nav>

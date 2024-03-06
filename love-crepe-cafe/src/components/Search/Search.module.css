@@ -44,53 +44,45 @@ input:hover {
     fill: #9e9ea7;
     color: #A1A1A1;
 }
-/* 1024px */
-@media only screen and (min-width: 1024px) {
-    .container {
-        margin: 1rem auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .group{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-}
 
 /* 768px */
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
     .container {
-        margin: 1rem auto;
+        width: 100%;
+        margin: 8px auto;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .group{
-        display: flex;
-        justify-content: center;
-        width: 100%;
+        width: 80%;
     }
     .group .input {
-        width:80%;
+        width:100%;
     }
-
+    .icon {
+        position: absolute;
+        padding: 10px;
+    }
 }
 
 /* 480px */
 @media only screen and (max-width: 480px) {
     .container {
         width: 100%;
-        margin: 1rem auto;
+        margin: 8px auto;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .group .input {
-        width:90%;
+    .group{
+        width: 95%;
     }
-    .icon{
+    .group .input {
+        width:100%;
+    }
+    .icon {
+        position: absolute;
         padding: 10px;
     }
 }
@@ -99,13 +91,16 @@ input:hover {
 @media only screen and (max-width: 390px) {
     .container {
         width: 100%;
-        margin: 1rem auto;
+        margin: 8px auto;
         display: flex;
         justify-content: center;
         align-items: center;
     }
+    .group{
+        width: 90%;
+    }
     .group .input {
-        width:80%;
+        width:100%;
     }
     .icon {
         position: absolute;
