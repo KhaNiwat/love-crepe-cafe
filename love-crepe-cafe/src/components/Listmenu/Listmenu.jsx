@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Style from "../Listmenu/Listmenu.module.css";
 import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 import Addanddel from '../addanddel/addanddel.jsx'
+const menulist = [{ num : 1, name : "Padthai" , price : 200},{ num : 2, name : "Cake" , price : 300},{ num : 3, name : "Coke" , price : 100}];
+
+
+
+
 export default function Listmenu() {
+
+  const [menulist_us,setmenulist_us] = useState(menulist);
+  // setmenulist_us(menulist);
   return (
     <Container className="my-4">
       <Table striped bordered hover>
@@ -17,24 +25,19 @@ export default function Listmenu() {
         </thead>
 
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Pad Thai</td>
-            <td>2000&nbsp;&nbsp; ₩</td>
+
+          {menulist_us.map((val,key) => {
+            return(
+              <tr>
+            <td>{val.num}</td>
+            <td>{val.name}</td>
+            <td>{val.price}&nbsp;&nbsp; ₩</td>
             <td><Addanddel /></td>
           </tr>
-          <tr>
-            <td>2</td>
-            <td>Tom Yum Goong</td>
-            <td>2000&nbsp;&nbsp; ₩</td>
-            <td><Addanddel /></td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Crepes</td>
-            <td>2000&nbsp;&nbsp; ₩</td>
-            <td><Addanddel /></td>
-          </tr>
+            )
+          })
+          }
+         
         </tbody>
       </Table>
     </Container>

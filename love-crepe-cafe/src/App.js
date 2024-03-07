@@ -12,8 +12,6 @@ function App() {
       {/* <Index/> */}
       <Navbar />
       <Search /> 
-      <Menugroup />
-      <Shownenu />
       <Listmenu />
       
     </div>
