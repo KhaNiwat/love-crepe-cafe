@@ -26,7 +26,7 @@ export default function Listmenu() {
 
         <tbody>
 
-          {menulist_us.map((val,key) => {
+          {menulist.map((val,key) => {
             return(
               <tr>
             <td>{val.num}</td>

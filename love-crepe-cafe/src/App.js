@@ -6,13 +6,14 @@ import Shownenu from './components/Shownenu/Shownenu.jsx'
 import Menugroup from './components/Menugroup/Menugroup.jsx';
 import Listmenu from  './components/Listmenu/Listmenu.jsx';
 import Addanddel from './components/addanddel/addanddel.jsx';
+import Option from './components/option/option.jsx';
 function App() {
   return (
     <div className="App">
       {/* <Index/> */}
       <Navbar />
-      <Search /> 
-      <Listmenu />
+      <Option />
+
       
     </div>
   );
