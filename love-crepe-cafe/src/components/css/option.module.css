@@ -1,20 +1,89 @@
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  width: 100%;   
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.left_right {
-    padding: 20px 0;
+.card .boximg {
+  position: relative;
+  width: 100%;
+  background-size: cover;
+}
+
+.card .content {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  border-radius: 32px;
+}
+
+.card .content .price {
+  position: absolute;
+  top: -50px;
+  height: screen;
+  width: 100%;
+  background-color: white;
+  border-radius: 28px;
+}
+
+.formcheckinput {
+  background-color: black;
+}
+
+@media only screen and (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+  .card .boximg img {
     width: 100%;
-    background-color: aquamarine;
-    height: auto;
-    text-align: center;
+    height: 100%;
+  }
 }
 
-/* 390px */
-@media only screen and (max-width: 390px) {
-  .grid{
-    grid-template-columns: repeat(1,1fr);
+@media only screen and (max-width: 768px) {
+  .displaybig {
+    display: none;
+  }
+  .card {
+    width: auto;
+  }
+  .card .boximg {
+    position: relative;
+    width: auto;
+    height: 20%;
+    background-size: cover;
+  }
+  .card .boximg img {
+    width: 100%;
+    height: 620px;
+  }
+  .content .price {
+    top: -10px;
+    width: 100%;
+    border-radius: 28px;
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .displaybig {
+    display: none;
+  }
+  .card .boximg {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+  }
+  .card .content .price {
+    top: -30px;
+    width: 100%;
+    border-radius: 28px;
+    padding: 20px;
+    margin: auto auto;
+  }
+  .mobile .card .boximg img {
+    width: 100%;
+    height: 320px;
   }
 }

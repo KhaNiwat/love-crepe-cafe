@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "../../src/components/Index.module.css";
+import Amount from "../components/amount/amount.jsx";
+
 export default function Index() {
   return (
     <div className={styles.mobile}>
@@ -17,5 +19,6 @@ export default function Index() {
         <a href=""><button className={styles.button}>Take away</button> </a>
       </div>
     </div>
+
   );
 }
