@@ -1,16 +1,23 @@
-import React from "react";
-import All from "../img/All.png";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import css from "../components/css/option.module.css";
-
-export default function Option() {
+import logo from "../img/All.png";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+function option() {
   return (
-    <div className={css.grid}>
-      <div className={css.box1}>
-        <img src={All} alt="" />
+    <>
+      <div class={css.grid}>
+        <div class={css.left_right}>
+          
+            <img src={logo} alt="" />
+          
+        </div>
+        <div class={css.left_right}>Right</div>
       </div>
-      <div className={css.box2}>
-        <img src={All} alt="" />
-      </div>
-    </div>
+    </>
   );
 }
+
+export default option;

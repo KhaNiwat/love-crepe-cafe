@@ -1,20 +1,20 @@
 .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
-    grid-gap: 10px; /* Gap between grid items */
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  width: 100%;   
+}
+
+.left_right {
+    padding: 20px 0;
+    width: 100%;
+    background-color: aquamarine;
+    height: auto;
+    text-align: center;
+}
+
+/* 390px */
+@media only screen and (max-width: 390px) {
+  .grid{
+    grid-template-columns: repeat(1,1fr);
   }
-  
-  .box {
-    border: 1px solid #ccc; /* Border for the boxes */
-  }
-  
-  /* Define individual box styles */
-  .box1 {
-    /* You can add any specific styles for box1 here */
-    background-color: rgb(255, 255, 255);
-  }
-  
-  .box2 {
-   background-color: black;
-  }
-  
+}
