@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Index.module.css";
+import styles from "../../src/components/Index.module.css";
 export default function Index() {
   return (
     <div className={styles.mobile}>

@@ -1,0 +1,20 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns with equal width */
+    grid-gap: 10px; /* Gap between grid items */
+  }
+  
+  .box {
+    border: 1px solid #ccc; /* Border for the boxes */
+  }
+  
+  /* Define individual box styles */
+  .box1 {
+    /* You can add any specific styles for box1 here */
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .box2 {
+   background-color: black;
+  }
+  

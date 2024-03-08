@@ -1,21 +1,24 @@
-import Index from './components/Index.jsx';
-import Navbar from './components/Navbar/Navbar.jsx';
-import Search from './components/Search/Search.jsx';
-import SearchAppBar from './components/Search/SearchAppBar.jsx'
-import Shownenu from './components/Shownenu/Shownenu.jsx'
-import Menugroup from './components/Menugroup/Menugroup.jsx';
-import Listmenu from  './components/Listmenu/Listmenu.jsx';
-import Addanddel from './components/addanddel/addanddel.jsx';
-import Option from './components/option/option.jsx';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./page/Layout.js";
+import HomeCustomer from "./page/Home_customer.jsx";
+import NoPage from "./page/NoPage.jsx";
+import Listmenu from "./page/ListMenu.jsx";
+import Index from "./page/index.jsx";
+import Option from "./page/option.jsx";
 function App() {
   return (
-    <div className="App">
-      {/* <Index/> */}
-      <Navbar />
-      <Option />
-
-      
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<Layout />}>
+          <Route Index path="*" element={<Index />} />
+          <Route  path="HomeCustomer" element={<HomeCustomer />} />
+          <Route path="list" element={<Listmenu />} />
+          <Route  element={<NoPage />} />
+          <Route path="Option" element={<Option />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
