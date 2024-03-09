@@ -28,4 +28,7 @@ code {
   .bt-on{
     @apply text-white bg-red-500 p-3 grid-cols-3 justify-items-center w-full rounded-lg
   }
+  .Dash-bt{
+    @apply text-black  bg-white w-28 h-10 
+  }
 }

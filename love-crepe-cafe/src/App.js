@@ -6,6 +6,8 @@ import NoPage from "./page/NoPage.jsx";
 import Listmenu from "./page/ListMenu.jsx";
 import Index from "./page/index.jsx";
 import Option from "./page/option.jsx";
+import Pfood_kitchen  from "./page/Pfood_kitchen.jsx";
+import Table_cus from "./page/Table_cus.jsx";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,8 @@ function App() {
           <Route path="list" element={<Listmenu />} />
           <Route  element={<NoPage />} />
           <Route path="Option" element={<Option />}></Route>
+          <Route path="Table_cus" element={<Table_cus />}></Route>
+          <Route path="Pfood_kitchen" element={<Pfood_kitchen />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

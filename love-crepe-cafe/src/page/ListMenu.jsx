@@ -41,7 +41,6 @@ export default function Listmenu() {
                         )
                     })
                     }
-
                 </tbody>
             </Table>
         </Container></>
