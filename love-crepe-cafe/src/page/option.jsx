@@ -24,7 +24,7 @@ function option() {
                 {["checkbox", "vae"].map((type) => (
                   <div key={`default-${type}`}>
                     <Form.Check
-                      type={type}
+                      type={"checkbox"}
                       id={`default-${type}`}
                       label={`default ${type}`}
                     />

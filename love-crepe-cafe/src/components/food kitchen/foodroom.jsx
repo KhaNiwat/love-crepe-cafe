@@ -1,5 +1,10 @@
 import React from "react";
 import img from "../../img/food.png";
+import DoneIcon from '@mui/icons-material/Done';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import CircularProgress from '@mui/material/CircularProgress';
+import  LoopIcon from '@mui/icons-material/Loop';
+
 export default function foodroom() {
   return (
     <div className="container p-10">
@@ -23,8 +28,8 @@ export default function foodroom() {
             <td className="text-center">Malcolm Lockyer</td>
             <td className="text-center"> 1961</td>
             <td className="text-center"> 1</td>
-            <td className="text-center bg-red-200"><button>กำลังทำ</button></td>
-            <td className="text-center "><button>เสร็จสิ้น</button></td>
+            <td className="text-center bg-red-200"><button><LoopIcon /></button></td>
+            <td className="text-center "><button><DoneIcon /></button></td>
           </tr>
         </tbody>
       </table>

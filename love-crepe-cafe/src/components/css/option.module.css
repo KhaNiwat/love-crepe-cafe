@@ -39,6 +39,15 @@
     height: 100%;
   }
 }
+@media only screen and (max-width: 820px) {
+  .displaybig{
+    display: none;
+  }
+  .card .boximg img {
+    width: 80%;
+    height: 40%;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .displaybig {
