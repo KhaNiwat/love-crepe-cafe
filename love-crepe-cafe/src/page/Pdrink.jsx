@@ -1,6 +1,6 @@
 import React from 'react'
 import Bar  from    "../components/bar/bar.jsx";
-import Drink from "../components/Drink/Drink.jsx";
+import DasDrink from "../components/DasDrink/DasDrink.jsx";
 export default function Pdrink () {
     return (
       // bar
@@ -17,7 +17,7 @@ export default function Pdrink () {
           <header className="bg-white shadow">
             <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
               <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-              <Drink />
+              <DasDrink />
             </div>
           </header>
         </div>

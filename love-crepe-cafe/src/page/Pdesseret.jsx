@@ -1,6 +1,6 @@
 import React from 'react'
 import DashDessert from "../components/DashDessert/DashDessert.jsx";
-import Bar from "../components/DashDessert/DashDessert.jsx";
+import Bar from "../components/bar/bar.jsx"
 export default function Pdesseret() {
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">

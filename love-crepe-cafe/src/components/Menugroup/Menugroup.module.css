@@ -1,17 +1,18 @@
 .container {
-    margin: 8px auto;
+    margin: 20px auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
     overflow-x: auto;
     max-width: 100%;
+    overflow-x: auto; /* เพิ่ม overflow-x: auto; เพื่อทำให้เกิด scroll แนวนอน */
     
 }
 .menugroup{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 100%;
+    gap: 3rem;
 }
 .box {
     display: flex;
@@ -25,11 +26,11 @@
     border: #FFC0CB;
 }
 .box img{
-    padding: 10px 10px;
-    width: 80px;
-    height: 80px;
-    border-radius: 20px;
+    padding: 5px;
+    border-radius: 16px;
     border: 1px solid #A1A1A1; 
+    width: 100%;
+    height: 100%;
 }
 .box img:hover{
     background-color: #FFC0CB;
@@ -43,40 +44,41 @@ a .textDecoration a:hover{
 }
 
 /* 1024px */
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
     .container {
         max-width: 100%;
-        margin: auto auto;
+        margin: 20px auto;
     }
     .menugroup{
-        gap: 40%;
+        gap: 5rem;
         margin: auto auto;
     }
 
     .box img{
-        width: 80px;
-        height: 80px;
-        border-radius: 20px;
         border: 1px solid #A1A1A1; 
+        width: 120px;
+        height:120px;
     }
 }
 
 /* 768px */
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
     .container {
         max-width: 100%;
-        margin: auto auto;
     }
     .menugroup{
-        gap: 30%;
+        gap: 0.5rem;
         margin: auto auto;
+    }
+    .box{
+        padding: 5px;
+        width: 100px;
     }
 
     .box img{
-        width: 80px;
-        height: 80px;
-        border-radius: 20px;
         border: 1px solid #A1A1A1; 
+        width: 120px;
+        height:120px;
     }
 }
 
@@ -84,18 +86,18 @@ a .textDecoration a:hover{
 @media only screen and (max-width: 480px) {
     .container {
         max-width: 100%;
-        margin: auto auto;
+        margin: 20px auto;
     }
     .menugroup{
-        gap: 30px;
+        gap: 1rem;
         margin: auto auto;
     }
-
+    .box{
+        width: 60px;
+    }
     .box img{
         width: 70px;
         height: 70px;
-        border-radius: 20px;
-        border: 1px solid #A1A1A1; 
     }
 }
 
@@ -103,17 +105,19 @@ a .textDecoration a:hover{
 @media only screen and (max-width: 390px) {
     .container {
         max-width: 100%;
-        margin: auto 1rem;
+        margin: 10px auto;
     }
     .menugroup{
-        gap: 30px;
+        gap: 1.5rem;
         margin: auto auto;
+    }
+    .box{
+        width: 50px;
     }
 
     .box img{
-        width: 60px;
+        width: auto;
         height: 60px;
-        border-radius: 20px;
         border: 1px solid #A1A1A1; 
     }
 }

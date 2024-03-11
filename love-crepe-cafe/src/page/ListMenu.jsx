@@ -4,7 +4,8 @@ import Container from "react-bootstrap/Container";
 import Table from "react-bootstrap/Table";
 import Addanddel from "../components/addanddel/addanddel";
 import Navbar  from "../components/Navbar/Navbar"
-const menulist = [{ num: 1, name: "Padthai", price: 200 }, { num: 2, name: "Cake", price: 300 }, { num: 3, name: "Coke", price: 100 }];
+import Payment from "../components/Payment/Payment";
+const menulist = [{ num: 1, name: "Padthai", price: 200 }];
 
 
 
@@ -43,6 +44,7 @@ export default function Listmenu() {
                     }
                 </tbody>
             </Table>
+            <Payment />
         </Container></>
     );
 }

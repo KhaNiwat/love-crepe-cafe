@@ -33,7 +33,19 @@ function Dashboard() {
   };
 
   const funsumday = () =>{
-    navigate("/padedaysummary/"+lang);
+    navigate("/Padedaysummary/"+lang);
+  }
+
+  const funsumweek = () =>{
+    navigate("/Padeweeksummary/"+lang)
+  }
+
+  const funsummonth = () =>{
+    navigate("/Pademonthsummary/"+lang);
+  }
+
+  const funsumyear = () =>{
+    navigate("/Padeyearsummary/"+lang);
   }
 
   return (
@@ -77,10 +89,10 @@ function Dashboard() {
             </button>
             {dropdownOpen && (
               <div className=" bg-white min-w-48 shadow-md z-10 Dropdown-content transform transition-all origin-top-right right-0 mt-2">
-                <button className="text-black block px-4 py-3 no-underline hover:bg-gray-100 " onClick={funsumday}>วันนี้</button>
-                <a href="#" className="text-black block px-4 py-3 no-underline hover:bg-gray-100">เดือนนี้</a>
-                <a href="#" className="text-black block px-4 py-3 no-underline hover:bg-gray-100">ทั้งหมด</a>
-                <a href="#" className="text-black block px-4 py-3 no-underline hover:bg-gray-100">เครื่องดื่ม</a>
+                <button className="text-black block px-3  py-3 no-underline hover:bg-gray-100 " onClick={funsumday}>ยอดรายขายวัน</button>
+                <a href="#" className="text-black block px-3  py-3 no-underline hover:bg-gray-100" onClick={funsumweek}>ยอดขายรายสัปดาห์</a>
+                <a href="#" className="text-black block px-3  py-3 no-underline hover:bg-gray-100" onClick={funsummonth}>ยอดขายเดือน</a>
+                <a href="#" className="text-black block px-3  py-3 no-underline hover:bg-gray-100" onClick={funsumyear}>ยอดขายรายปี</a>
               </div>
             )}
           </li>

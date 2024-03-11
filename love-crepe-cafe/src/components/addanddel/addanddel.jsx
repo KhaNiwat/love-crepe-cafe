@@ -23,7 +23,7 @@ export default function Addanddel() {
         <button onClick={subtractCount}>
           <RemoveCircleIcon />
         </button>
-        <label>{count}</label>
+        <label className="mx-2">{count}</label>
         <button onClick={AddCount}>
           <AddCircleIcon />
         </button>

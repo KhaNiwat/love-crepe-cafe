@@ -1,7 +1,7 @@
 import React from 'react'
-import Day from '../components/summary/day.jsx'
 import Bar from "../components/bar/bar.jsx";
-export default function Padedaysummary() {
+import Month from "../components/summary/month.jsx"
+export default function Pademonthsummary() {
   return (
     <div className="h-screen flex overflow-hidden bg-gray-100">
     <div className="hidden md:flex md:flex-shrink-0">
@@ -15,7 +15,7 @@ export default function Padedaysummary() {
       <header className="bg-white shadow">
         <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-          <Day />
+          <Month />
         </div>
       </header>
     </div>

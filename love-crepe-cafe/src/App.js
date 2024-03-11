@@ -9,8 +9,15 @@ import Option from "./page/option.jsx";
 import Pfood_kitchen  from "./page/Pfood_kitchen.jsx";
 import Table_cus from "./page/Table_cus.jsx";
 import Drink from "./page/Pdrink.jsx";
-import Pdessert from "./page/Dashboard.jsx";
-import Padedaysummary from"./page/padedaysummary.jsx"
+import Pdessert from "./page/Pdesseret.jsx";
+import Padedaysummary from"./page/Padedaysummary.jsx"
+import Padeweeksummary from './page/Padeweeksummary.jsx'
+import Pademonthsummary from "./page/Pademonthsummary.jsx";
+import Padeyearsummary from "./page/Padeyearsummary.jsx";
+import Customernenuall from "./page/Customernenuall.jsx";
+import Cusmenufood from "./page/Cusmenufood.jsx";
+import Cusmenudessert from "./page/Cusmenudessert.jsx"
+import Cusmenudrink from "./page/Cusmenudrink.jsx"
 // เฉพาะ เพจ
 function App() {
   return (
@@ -27,6 +34,13 @@ function App() {
           <Route path="Drink/:lang" element={<Drink />}></Route>
           <Route path="Pdessert/:lang" element={<Pdessert />}></Route>
           <Route path="Padedaysummary/:lang" element={<Padedaysummary />}></Route>
+          <Route path="Pademonthsummary/:lang" element={<Pademonthsummary />}></Route>
+          <Route path="Padeweeksummary/:lang" element={<Padeweeksummary />}></Route>
+          <Route path="Padeyearsummary/:lang" element={<Padeyearsummary />}></Route>
+          <Route path="Customernenuall/:lang" element={<Customernenuall />}></Route>
+          <Route path="Cusmenufood/:lang" element={<Cusmenufood />}></Route>
+          <Route path="Cusmenudessert/:lang" element={<Cusmenudessert />}></Route>
+          <Route path="Cusmenudrink/:lang" element={<Cusmenudrink />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

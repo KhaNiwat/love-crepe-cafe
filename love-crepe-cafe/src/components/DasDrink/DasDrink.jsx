@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../img/food.png";
+import img from "../../img/Drink.png";
 import DoneIcon from "@mui/icons-material/Done";
 import LoopIcon from "@mui/icons-material/Loop";
 import { useParams } from "react-router-dom";
@@ -10,9 +10,7 @@ const dataFromapi = [
   { name: "name1", order: 123, status: "finish" },
   { name: "name2", order: 124, status: "serve" },
 ];
-
-export default function Foodroom() {
-  //แปรตัว
+export default function Drink() {
   const { lang } = useParams();
   const [dt, setdt] = useState(dataFromapi);
 
@@ -30,10 +28,9 @@ export default function Foodroom() {
       console.log(error);
     }
   };
-
   return (
     <div className="container p-10">
-      <h4>รายการอาหาร</h4>
+      <h4>รายการเครื่องดื่ม</h4>
       <table class="table">
         <thead>
           <tr>
