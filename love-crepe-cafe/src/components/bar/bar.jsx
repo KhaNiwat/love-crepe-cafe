@@ -48,6 +48,11 @@ function Dashboard() {
     navigate("/Padeyearsummary/"+lang);
   }
 
+  // Upmenu
+  const Up_menu = () =>{
+    navigate("/Page_upmenu/"+lang);
+  }
+
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
@@ -76,9 +81,16 @@ function Dashboard() {
               </a>
             </button>
           </li>
+
           <li className="mb-3">
             <button className="Dash-bt text-black no-underline"  onClick={ClickDrink}>
               เครื่องดื่ม
+            </button>
+          </li>
+
+          <li className="mb-3">
+            <button className="Dash-bt text-black no-underline"  onClick={Up_menu}>
+              เพิ่มเมนู
             </button>
           </li>
           

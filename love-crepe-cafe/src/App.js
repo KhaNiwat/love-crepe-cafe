@@ -18,6 +18,8 @@ import Customernenuall from "./page/Customernenuall.jsx";
 import Cusmenufood from "./page/Cusmenufood.jsx";
 import Cusmenudessert from "./page/Cusmenudessert.jsx"
 import Cusmenudrink from "./page/Cusmenudrink.jsx"
+import Page_upmenu from "./page/Page_upmenu.jsx";
+import PageSumordertable from "./page/PageSumordertable.jsx"
 // เฉพาะ เพจ
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
           <Route path="Cusmenufood/:lang" element={<Cusmenufood />}></Route>
           <Route path="Cusmenudessert/:lang" element={<Cusmenudessert />}></Route>
           <Route path="Cusmenudrink/:lang" element={<Cusmenudrink />}></Route>
+          <Route path="Page_upmenu/:lang" element={<Page_upmenu />}></Route>
+          <Route path="PageSumordertable/:lang" element={<PageSumordertable />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

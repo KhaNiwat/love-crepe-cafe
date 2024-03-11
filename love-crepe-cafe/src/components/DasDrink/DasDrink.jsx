@@ -20,7 +20,7 @@ export default function Drink() {
 
   const getdatalist = async (lang) => {
     try {
-      const res = await Axios.post("http://localhost:5177/food_room", {
+      const res = await Axios.post("http://localhost:5177/DasDrink", {
         lang: lang,
       });
       setdt(res.data);
