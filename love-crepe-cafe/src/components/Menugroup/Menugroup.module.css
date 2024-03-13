@@ -12,7 +12,6 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 3rem;
 }
 .box {
     display: flex;
@@ -47,15 +46,16 @@ a .textDecoration a:hover{
 @media only screen and (min-width: 1024px) {
     .container {
         max-width: 100%;
-        margin: 20px auto;
     }
     .menugroup{
         gap: 5rem;
         margin: auto auto;
     }
+    .box{
+        width: auto;
+    }
 
     .box img{
-        border: 1px solid #A1A1A1; 
         width: 120px;
         height:120px;
     }
@@ -67,16 +67,14 @@ a .textDecoration a:hover{
         max-width: 100%;
     }
     .menugroup{
-        gap: 0.5rem;
+        gap: 1.5rem;
         margin: auto auto;
     }
     .box{
-        padding: 5px;
-        width: 100px;
+        width: auto;
     }
 
     .box img{
-        border: 1px solid #A1A1A1; 
         width: 120px;
         height:120px;
     }
@@ -93,11 +91,11 @@ a .textDecoration a:hover{
         margin: auto auto;
     }
     .box{
-        width: 60px;
+        width: auto;
     }
     .box img{
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -112,12 +110,11 @@ a .textDecoration a:hover{
         margin: auto auto;
     }
     .box{
-        width: 50px;
+        width: auto;
     }
 
     .box img{
-        width: auto;
+        width: 60px;
         height: 60px;
-        border: 1px solid #A1A1A1; 
     }
 }

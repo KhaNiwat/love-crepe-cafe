@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Shownenu.module.css";
-import img1 from "../../img/logo.png";
+import img1 from "../../img/All.png";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom';
 import Axios from "axios";
 
 const dataFromapi = [
-  { namemenu: "ข้าวผัด", price: 1000 }
+  { namemenu: "ข้าวผัด", price: 10000 }
 ];
 
 export default function Shownenu() {
@@ -50,6 +50,7 @@ export default function Shownenu() {
             </div>
           </Col>
         ))}
+
       </Row>
     </Container>
   );

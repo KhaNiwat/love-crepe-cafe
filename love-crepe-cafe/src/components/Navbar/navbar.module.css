@@ -88,12 +88,19 @@ nav .navbar{
     right: 0; 
     height: 100vh;
     width: 200px; 
-    background-color: #fff;
+    background-color: #DF5C6C;
     z-index: 1000; 
   }
   .closeNav {
     cursor: pointer;
-    /* เพิ่มสไตล์อื่น ๆ ตามต้องการ เช่น สี, ขนาด, ระยะห่าง, เป็นต้น */
+    margin: 10px 0;
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
   }
-  
+.sideNav a{
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
   

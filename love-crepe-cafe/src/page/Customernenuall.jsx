@@ -7,12 +7,10 @@ export default function Customernenuall() {
 
   return (
     <div>
-      <p>รวม</p>
         <Navbar />
         <Search />
         <Menugroup />
-        <Shownenu/>
-        
+        <Shownenu/> 
     </div>
   )
 }

@@ -10,12 +10,14 @@ h3 {
 
 .card {
     background-color: pink;
-    padding: 5px;
+    padding: 8px;
     border-radius: 20px;
 }
 .namemanu {
     text-align: left;
     padding: 0 5px;
+    margin: 0.5rem 0;
+    
 }
 .namemanu p{
     font-size: 24px;
@@ -26,11 +28,12 @@ h3 {
 .boximg {
     display: grid;
     justify-content: center;
-    align-items: center; /* เพิ่มการจัดให้อยู่ตรงกลางในแนวตั้ง */
+    align-items: center; 
 }
 
 .boximg img {
-    width: 80%;
+    width: 280px;
+    height: 280px;
     justify-self: center; /* เพิ่มการจัดให้รูปภาพอยู่ตรงกลางในแนวนอน */
     align-self: center; /* เพิ่มการจัดให้รูปภาพอยู่ตรงกลางในแนวตั้ง */
 }
@@ -68,6 +71,12 @@ h3 {
 
 /* 768px */
 @media only screen and (max-width: 768px) {
+    .card{
+        padding: 8px;
+    }
+    .namemanu{
+        margin: 0.5rem 0;
+    }
     .namemanu p{
         font-size: 18px;
         font-weight: 500;
@@ -94,6 +103,12 @@ h3 {
 
 /* 480px */
 @media only screen and (max-width: 480px) {
+    .card{
+        padding: 8px;
+    }
+    .namemanu{
+        margin: 0.5rem 0;
+    }
     .namemanu p{
         font-size: 18px;
         font-weight: 500;
@@ -120,6 +135,12 @@ h3 {
 
 /* 390px */
 @media only screen and (max-width: 390px) {
+    .card{
+        padding: 8px;
+    }
+    .namemanu{
+        margin: 0.5rem 0;
+    }
     .namemanu p {
         text-align: left;
         font-size: 18px;
@@ -156,6 +177,5 @@ h3 {
 
     .container {
         grid-template-columns: auto auto;
-
     }
 }

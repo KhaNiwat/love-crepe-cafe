@@ -5,13 +5,38 @@ import img1 from "../../img/logo.png";
 import img2 from "../../img/food.png";
 import img3 from "../../img/Dessert.png";
 import img4 from "../../img/Drink.png";
+import { Axios } from "axios";
+import { useEffect, useState } from "react";
+
+const dataFromapi = [
+  { All: "All", Food: "Food", Dessert: "Dessert" ,Drink: "Drink"},
+];
+
+
 export default function Menugroup() {
   const navigate = useNavigate();
-  const {lang} = useParams();
+  const { lang } = useParams();
+  const [dt, setDt] = useState(dataFromapi);
 
+  useEffect(() => {
+    getDatalist(lang);
+  }, [lang]);
+
+  const getDatalist = async (lang) => {
+    try {
+      const res = await Axios.post("http://localhost:5177/food_room", {
+        lang: lang,
+      });
+      setDt(res.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  
   // ไปหน้าอาหารรวม
   const To_page_cus_all = () =>{ 
-    navigate("/Customernenuall/"+lang);
+  navigate("/Customernenuall/"+lang);
   }
  
   //ไปยังหน้าอาหาร
@@ -30,6 +55,8 @@ export default function Menugroup() {
       navigate("/Cusmenudrink/"+lang)
     }
   return (
+    <>
+    {dt.map((val, index) => (
     <div className={styles.container}>
       <div className={styles.menugroup}>
         {/* เมนู */}
@@ -39,7 +66,7 @@ export default function Menugroup() {
           style={{ textDecoration: "none", color: "#A1A1A1" }} onClick={To_page_cus_all}
         >
           <img src={img1} alt="img1" />
-          All
+          {val.All}
         </a>
 
         <a
@@ -48,7 +75,7 @@ export default function Menugroup() {
           style={{ textDecoration: "none", color: "#A1A1A1" }} onClick={To_page_food}
         >
           <img src={img2} alt="img2" />
-          Food
+          {val.Food}
         </a>
 
         <a
@@ -57,7 +84,7 @@ export default function Menugroup() {
           style={{ textDecoration: "none", color: "#A1A1A1" }} onClick={To_pade_Dessert}
         >
           <img src={img3} alt="img3" />
-          Dessert
+          {val.Dessert}
         </a>
 
         <a
@@ -66,9 +93,15 @@ export default function Menugroup() {
           style={{ textDecoration: "none", color: "#A1A1A1" }}  onClick={To_pade_Drink}
         >
           <img src={img4} alt="img4" />
-          Drink
+          {val.Drink}
         </a>
+
+        
+
+  
       </div>
     </div>
+    ))}
+    </>
   );
 }

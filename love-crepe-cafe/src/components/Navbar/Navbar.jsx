@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Styles from "./navbar.module.css"; 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faArrowAltCircleLeft,faTimes } from '@fortawesome/free-solid-svg-icons'; 
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faBars, faArrowAltCircleLeft,faTimes,faLanguage,faShoppingCart } from '@fortawesome/free-solid-svg-icons'; 
+
 import logo from '../../img/logo.png';
 export default class Navbar extends Component {
   constructor(props) {
@@ -44,7 +45,8 @@ export default class Navbar extends Component {
             <div className={Styles.closeNav} onClick={this.closeNav}>
               <FontAwesomeIcon icon={faTimes} /> {/* หรือไอคอนปิดที่คุณต้องการ */}
             </div>
-          <p>1</p>
+            <a href=''><FontAwesomeIcon icon={faLanguage } /> Language</a> <br /> <br />
+            <a href=''><FontAwesomeIcon icon={faShoppingCart } /> faOrder</a>
           </div>
         )}
       </nav>

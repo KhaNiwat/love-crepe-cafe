@@ -6,7 +6,7 @@ import Shownenu from '../components/Shownenu/Shownenu'
 export default function Cusmenufood() {
   return (
     <>
-    <p>อาหาร</p>
+
         <Navbar />
         <Search/>
         <Menugroup/> 

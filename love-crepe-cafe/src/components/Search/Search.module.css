@@ -45,6 +45,26 @@ input:hover {
     color: #A1A1A1;
 }
 
+@media only screen and (max-width: 1024px) {
+    .container {
+        width: 100%;
+        margin: 8px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .group{
+        width: 100%;
+    }
+    .group .input {
+        width:60%;
+    }
+    .icon {
+        position: absolute;
+        padding: 10px;
+    }
+}
+
 /* 768px */
 @media only screen and (max-width: 768px) {
     .container {
@@ -58,7 +78,7 @@ input:hover {
         width: 80%;
     }
     .group .input {
-        width:100%;
+        width:90%;
     }
     .icon {
         position: absolute;
