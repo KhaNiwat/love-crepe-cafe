@@ -1,30 +1,51 @@
 import React from "react";
-import img from "../../img/Drink.png";
+import img from "../../img/food.png";
 import DoneIcon from "@mui/icons-material/Done";
-import LoopIcon from "@mui/icons-material/Loop";
-import { useParams } from "react-router-dom";
-import { Axios } from "axios";
+import { useParams, useNavigate } from "react-router-dom";
+import Axios from "axios";
 import { useEffect, useState } from "react";
+import DesDrinkcrip from "./DesDrinkcrip";
 
 const dataFromapi = [
-  { name: "name1", order: 123, status: "finish" },
-  { name: "name2", order: 124, status: "serve" },
+  { name: "name1", order: 123 ,amount : 10},
+  { name: "name1", order: 123 ,amount : 10},
 ];
 
-export default function Foodroom() {
-  const { lang } = useParams();
-  const [dt, setDt] = useState(dataFromapi);
+const dataoption = [{ Des: 1 }, { Des: 1 }, { Des: 1 }];
 
+export default function DasDrink() {
+  const { lang } = useParams();
+  const [dt, setData] = useState([]);
+  const [dtop, setdtop] = useState([]);
+  const [tmp,settmp] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
-    getDatalist(lang);
+    getDrinklist(lang);
   }, []);
 
-  const getDatalist = async (lang) => {
+  const getDrinklist = async (lang) => {
     try {
-      const res = await Axios.post("http://localhost:5177/Drink_room", {
+      const res = await Axios.post("http://localhost:5177/drink_bar", {
         lang: lang,
       });
-      setDt(res.data);
+      
+      setData(res.data);
+      // console.log("dasdrink");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const startgo = async (lang) =>{
+    await getDrinklist(lang);
+    
+  }
+
+  const sentCartIdtofinishmenu = async (cart) => {
+    try {
+      const res = await Axios.post("http://localhost:5177/finishMenu", {
+        CartID : cart
+      });
     } catch (error) {
       console.log(error);
     }
@@ -33,13 +54,12 @@ export default function Foodroom() {
   const handleLoopClick = (index) => {
     const newData = [...dt];
     newData[index].status = "serve";
-    setDt(newData);
   };
 
-  const handleDoneClick = (index) => {
-    const newData = [...dt];
-    newData[index].status = "finish";
-    setDt(newData);
+  const handleDoneClick = (cart,index_del) => {
+    sentCartIdtofinishmenu(cart);
+    setData(prevData => prevData.filter((_, index) => index !== index_del));
+    navigate("/Drink/"+lang);
   };
 
   return (
@@ -53,11 +73,12 @@ export default function Foodroom() {
             <th className="text-center">ชื่ออาหาร</th>
             <th className="text-center">ออเดอร์</th>
             <th className="text-center">จำนวน</th>
-            <th className="text-center">กำลังทำ</th>
+            <th className="text-center">ออฟชั่น</th>
             <th className="text-center">เสร็จสิ้น</th>
           </tr>
         </thead>
         <tbody>
+          
           {dt.map((val, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
@@ -71,25 +92,14 @@ export default function Foodroom() {
                   style={{ width: "100%", height: "100%" }}
                 />
               </td>
-              <td className="text-center">{val.name}</td>
-              <td className="text-center">{val.order}</td>
-              <td className="text-center">1</td>
-              <td className="text-center bg-red-200">
-                <button
-                  className="bg-gray-300 p-1 w-4/5 rounded-md"
-                  onClick={() => handleLoopClick(index)}
-                  style={{
-                    background: val.status === "serve" ? "blue" : "transparent",
-                    color: val.status === "serve" ? "white" : "black",
-                  }}
-                >
-                  <LoopIcon />
-                </button>
-              </td>
+              <td className="text-center">{val.Name}</td>
+              <td className="text-center">{val.TableID}</td>
+              <td className="text-center">{val.amount}</td>
+              <DesDrinkcrip OptionID={val.OptionID} />
               <td className="text-center">
                 <button
                   className="bg-gray-300 p-1 w-4/5 rounded-md"
-                  onClick={() => handleDoneClick(index)}
+                  onClick={() => handleDoneClick(val.cartID,index)}
                   style={{
                     background:
                       val.status === "finish" ? "green" : "transparent",

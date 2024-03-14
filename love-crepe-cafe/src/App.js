@@ -20,6 +20,7 @@ import Cusmenudessert from "./page/Cusmenudessert.jsx"
 import Cusmenudrink from "./page/Cusmenudrink.jsx"
 import Page_upmenu from "./page/Page_upmenu.jsx";
 import PageSumordertable from "./page/PageSumordertable.jsx"
+import PageServe from "./page/PageServe.jsx";
 // เฉพาะ เพจ
 function App() {
   return (
@@ -39,12 +40,10 @@ function App() {
           <Route path="Pademonthsummary/:lang" element={<Pademonthsummary />}></Route>
           <Route path="Padeweeksummary/:lang" element={<Padeweeksummary />}></Route>
           <Route path="Padeyearsummary/:lang" element={<Padeyearsummary />}></Route>
-          <Route path="Customernenuall/:lang" element={<Customernenuall />}></Route>
-          <Route path="Cusmenufood/:lang" element={<Cusmenufood />}></Route>
-          <Route path="Cusmenudessert/:lang" element={<Cusmenudessert />}></Route>
-          <Route path="Cusmenudrink/:lang" element={<Cusmenudrink />}></Route>
+          <Route path="menu/:Type_food/:lang" element={<Customernenuall />}></Route>
           <Route path="Page_upmenu/:lang" element={<Page_upmenu />}></Route>
           <Route path="PageSumordertable/:lang" element={<PageSumordertable />}></Route>
+          <Route path="PageServe/:lang" element={<PageServe />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

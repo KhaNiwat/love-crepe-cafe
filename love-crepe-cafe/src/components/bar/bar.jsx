@@ -52,6 +52,10 @@ function Dashboard() {
   const Up_menu = () =>{
     navigate("/Page_upmenu/"+lang);
   }
+  // Serve
+  const To_Serve = () =>{
+    navigate("/PageServe/"+lang);
+  }
 
   return (
     <div className="flex h-screen">
@@ -64,6 +68,13 @@ function Dashboard() {
             <button className="Dash-bt">
               <a href="" className="text-black no-underline" onClick={ClickTable}>
                 เลือกโต๊ะ
+              </a>
+            </button>
+          </li>
+          <li className="mb-3">
+            <button className="Dash-bt">
+              <a href="" className="text-black no-underline" onClick={To_Serve}>
+                พร้อมเสริฟ
               </a>
             </button>
           </li>
@@ -100,18 +111,16 @@ function Dashboard() {
               ยอดสรุป
             </button>
             {dropdownOpen && (
-              <div className=" bg-white min-w-48 shadow-md z-10 Dropdown-content transform transition-all origin-top-right right-0 mt-2">
-                <button className="text-black block px-3  py-3 no-underline hover:bg-gray-100 " onClick={funsumday}>ยอดรายขายวัน</button>
-                <a href="#" className="text-black block px-3  py-3 no-underline hover:bg-gray-100" onClick={funsumweek}>ยอดขายรายสัปดาห์</a>
-                <a href="#" className="text-black block px-3  py-3 no-underline hover:bg-gray-100" onClick={funsummonth}>ยอดขายเดือน</a>
-                <a href="#" className="text-black block px-3  py-3 no-underline hover:bg-gray-100" onClick={funsumyear}>ยอดขายรายปี</a>
+              <div className=" bg-white w-full shadow-md z-10 Dropdown-content transform transition-all origin-top-right right-0 mt-2">
+                <button className="text-black block px-2  py-2 no-underline hover:bg-gray-100 " onClick={funsumday}>ยอดรายขายวัน</button>
+                <button className="text-black block px-2  py-2 no-underline hover:bg-gray-100" onClick={funsumweek}>ยอดขายรายสัปดาห์</button>
+                <button className="text-black block px-2  py-2 no-underline hover:bg-gray-100" onClick={funsummonth}>ยอดขายเดือน</button>
+                <button className="text-black block px-2  py-2 no-underline hover:bg-gray-100" onClick={funsumyear}>ยอดขายรายปี</button>
               </div>
             )}
           </li>
         </ul> 
-         {/* <Menu onClick={({kye})}
-           
-         ></Menu> */}
+         
         
       </div>
     </div>

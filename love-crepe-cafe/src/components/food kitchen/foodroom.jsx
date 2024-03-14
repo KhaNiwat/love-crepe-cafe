@@ -1,19 +1,22 @@
 import React from "react";
 import img from "../../img/food.png";
 import DoneIcon from "@mui/icons-material/Done";
-import LoopIcon from "@mui/icons-material/Loop";
-import { useParams } from "react-router-dom";
-import { Axios } from "axios";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
+import  Axios  from "axios";
 import { useEffect, useState } from "react";
 
 const dataFromapi = [
-  { name: "name1", order: 123, status: "finish" },
-  { name: "name2", order: 124, status: "serve" },
+  { name: "name1", order: 123 ,amount : 10},
+  { name: "name1", order: 123 ,amount : 10}
 ];
+
+const dataoption = [{ Des: 1 }, { Des: 1 }, { Des: 1 }];
 
 export default function Foodroom() {
   const { lang } = useParams();
-  const [dt, setDt] = useState(dataFromapi);
+  const [dt, setDt] = useState([]);
+  const [dtop, setdtop] = useState(dataoption);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getDatalist(lang);
@@ -21,7 +24,7 @@ export default function Foodroom() {
 
   const getDatalist = async (lang) => {
     try {
-      const res = await Axios.post("http://localhost:5177/food_room", {
+      const res = await Axios.post("http://localhost:5177/food_bar", {
         lang: lang,
       });
       setDt(res.data);
@@ -30,17 +33,35 @@ export default function Foodroom() {
     }
   };
 
-  const handleLoopClick = (index) => {
-    const newData = [...dt];
-    newData[index].status = "serve";
-    setDt(newData);
+  const getDataOption = async (lang,Option) => {
+    try {
+      const res = await Axios.post("http://localhost:5177/food_room", {
+        lang: lang,
+        OptionID : Option
+      });
+      setdtop(res.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleDoneClick = (index) => {
-    const newData = [...dt];
-    newData[index].status = "finish";
-    setDt(newData);
+  const sentCartIdtofinishmenu = async (cart) => {
+    try {
+      const res = await Axios.post("http://localhost:5177/finishMenu", {
+        CartID : cart
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+
+  const handleDoneClick = (cart,index_del) => {
+    sentCartIdtofinishmenu(cart);
+    setDt(prevData => prevData.filter((_, index) => index !== index_del));
+    navigate("/Pfood_kitchen/"+lang);
+  };
+
 
   return (
     <div className="container p-10">
@@ -53,7 +74,7 @@ export default function Foodroom() {
             <th className="text-center">ชื่ออาหาร</th>
             <th className="text-center">ออเดอร์</th>
             <th className="text-center">จำนวน</th>
-            <th className="text-center">กำลังทำ</th>
+            <th className="text-center">ออฟชั่น</th>
             <th className="text-center">เสร็จสิ้น</th>
           </tr>
         </thead>
@@ -73,30 +94,27 @@ export default function Foodroom() {
               </td>
               <td className="text-center">{val.name}</td>
               <td className="text-center">{val.order}</td>
-              <td className="text-center">1</td>
+              <td className="text-center">{val.amount}</td>
               <td className="text-center bg-red-200">
-                <button
-                  className="bg-gray-300 p-1 w-4/5 rounded-md"
-                  onClick={() => handleLoopClick(index)}
-                  style={{
-                    background: val.status === "serve" ? "blue" : "transparent",
-                    color: val.status === "serve" ? "white" : "black",
-                  }}
-                >
-                  <LoopIcon />
-                </button>
+                {dtop.map((val, index) => (
+                  <span key={index}>
+                    {String(val.Des)}
+                    <br />
+                  </span>
+                ))}
               </td>
+
               <td className="text-center">
                 <button
-                  className="bg-gray-300 p-1 w-4/5 rounded-md"
-                  onClick={() => handleDoneClick(index)}
+                  className="bg-su"
+                  onClick={() => handleDoneClick(val.cartID,index)}
                   style={{
                     background:
                       val.status === "finish" ? "green" : "transparent",
                     color: val.status === "finish" ? "white" : "black",
                   }}
                 >
-                  <DoneIcon />
+                  <DoneIcon className="bt-su" />
                 </button>
               </td>
             </tr>

@@ -48,7 +48,7 @@ export default function Week() {
                 <td> {val.day}</td>
                 <td>{val.amount}</td>
                 <td>{val.sum}</td>
-                <td><button className="bg-red-500">sdfsdf</button></td>
+                <td><button>sdfsdf</button></td>
               </tr>
             </tbody>
           );

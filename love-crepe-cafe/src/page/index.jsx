@@ -20,7 +20,7 @@ export default function Index() {
   };
 
   const To_page_cus_all = () => {
-    navigate(`/Customernenuall/${lang}`);
+    navigate(`/menu/all/${lang}`);
   };
 
   // รายการภาษาและข้อความตามภาษา

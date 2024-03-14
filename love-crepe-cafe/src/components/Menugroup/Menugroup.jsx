@@ -20,7 +20,7 @@ export default function Menugroup() {
 
   useEffect(() => {
     getDatalist(lang);
-  }, [lang]);
+  }, );
 
   const getDatalist = async (lang) => {
     try {
@@ -34,25 +34,23 @@ export default function Menugroup() {
   };
 
   
-  // ไปหน้าอาหารรวม
   const To_page_cus_all = () =>{ 
-  navigate("/Customernenuall/"+lang);
+  navigate("/menu/all/"+lang);
   }
  
-  //ไปยังหน้าอาหาร
   const To_page_food = () =>{
     //redirect("Table_cus/"+lang); 
-    navigate("/Cusmenufood/"+lang);
+    navigate("/menu/food/"+lang);
   };
 
-  //ไปยังหน้าของหวาน
+  
   const To_pade_Dessert = () =>{
-    navigate("/Cusmenudessert/"+lang)
+    navigate("/menu/dessert/"+lang)
   }
 
     //ไปยังหน้าของเครื่องดื่ม
     const To_pade_Drink = () =>{
-      navigate("/Cusmenudrink/"+lang)
+      navigate("/menu/drink/"+lang)
     }
   return (
     <>
@@ -62,7 +60,7 @@ export default function Menugroup() {
         {/* เมนู */}
         <a
           className={styles.box}
-          href="#"
+
           style={{ textDecoration: "none", color: "#A1A1A1" }} onClick={To_page_cus_all}
         >
           <img src={img1} alt="img1" />
@@ -71,7 +69,7 @@ export default function Menugroup() {
 
         <a
           className={styles.box}
-          href="#"
+         
           style={{ textDecoration: "none", color: "#A1A1A1" }} onClick={To_page_food}
         >
           <img src={img2} alt="img2" />
@@ -80,7 +78,7 @@ export default function Menugroup() {
 
         <a
           className={styles.box}
-          href="#"
+          
           style={{ textDecoration: "none", color: "#A1A1A1" }} onClick={To_pade_Dessert}
         >
           <img src={img3} alt="img3" />
@@ -89,16 +87,13 @@ export default function Menugroup() {
 
         <a
           className={styles.box}
-          href="#"
+        
           style={{ textDecoration: "none", color: "#A1A1A1" }}  onClick={To_pade_Drink}
         >
           <img src={img4} alt="img4" />
           {val.Drink}
         </a>
 
-        
-
-  
       </div>
     </div>
     ))}
