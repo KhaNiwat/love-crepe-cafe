@@ -4,9 +4,9 @@
     flex-direction: row;
     justify-content: center;
     overflow-x: auto;
-    max-width: 100%;
-    overflow-x: auto; /* เพิ่ม overflow-x: auto; เพื่อทำให้เกิด scroll แนวนอน */
-    
+    width: 100%;
+    /* overflow-x: auto; 
+     */
 }
 .menugroup{
     display: flex;
@@ -45,11 +45,14 @@ a .textDecoration a:hover{
 /* 1024px */
 @media only screen and (min-width: 1024px) {
     .container {
-        max-width: 100%;
+        width: 100%;
     }
     .menugroup{
-        gap: 5rem;
-        margin: auto auto;
+        margin: auto auto ;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 1rem;
     }
     .box{
         width: auto;
@@ -67,8 +70,11 @@ a .textDecoration a:hover{
         max-width: 100%;
     }
     .menugroup{
-        gap: 1.5rem;
-        margin: auto auto;
+        margin: auto auto ;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 1rem;
     }
     .box{
         width: auto;
@@ -87,8 +93,11 @@ a .textDecoration a:hover{
         margin: 20px auto;
     }
     .menugroup{
-        gap: 1rem;
-        margin: auto auto;
+        margin: auto auto ;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 1rem;
     }
     .box{
         width: auto;

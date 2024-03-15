@@ -31,7 +31,8 @@ code {
   .Dash-bt{
     @apply text-black  bg-white w-28 h-10 
   }
-  .bt-su{
-    @apply text-white bg-green-500 p-3 grid-cols-3 justify-items-center p-1 w-full rounded-md
+  .bt-add {
+    @apply text-white bg-green-600 p-1 w-full rounded-md font-medium; 
   }
+  
 }

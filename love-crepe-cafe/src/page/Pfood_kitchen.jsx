@@ -12,13 +12,13 @@ export default function Pfood_kitchen() {
       </div>
     </div>
     <div className="flex flex-col flex-1 overflow-y-auto">
-      <header className="bg-white shadow">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <div className="h-full bg-white shadow">
+        <div className=" max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
           {/* <Table/> */}
           <Foodroom />
         </div>
-      </header>
+      </div>
     </div>
   </div>
   )

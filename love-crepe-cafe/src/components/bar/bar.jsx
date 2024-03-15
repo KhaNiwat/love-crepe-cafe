@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Navigate, redirect, useNavigate, useParams } from "react-router-dom";
-
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 function Dashboard() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
@@ -60,13 +60,13 @@ function Dashboard() {
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
-      <div className="text-white w-64 py-4 px-4">
+      <div className="text-white w-64 py-4 px-4 font-bold">
         <div className="mb-3 text-xl font-bold">Dashboard</div>
          <br />
         <ul>
           <li className="mb-3">
             <button className="Dash-bt">
-              <a href="" className="text-black no-underline" onClick={ClickTable}>
+              <a href="" className="text-black no-underline " onClick={ClickTable}>
                 เลือกโต๊ะ
               </a>
             </button>
@@ -108,14 +108,14 @@ function Dashboard() {
 
           <li className="mb-3">
             <button className="Dash-bt" onClick={toggleDropdown}>
-              ยอดสรุป
+              ยอดสรุป <ArrowDropDownIcon/>
             </button>
             {dropdownOpen && (
               <div className=" bg-white w-full shadow-md z-10 Dropdown-content transform transition-all origin-top-right right-0 mt-2">
-                <button className="text-black block px-2  py-2 no-underline hover:bg-gray-100 " onClick={funsumday}>ยอดรายขายวัน</button>
-                <button className="text-black block px-2  py-2 no-underline hover:bg-gray-100" onClick={funsumweek}>ยอดขายรายสัปดาห์</button>
-                <button className="text-black block px-2  py-2 no-underline hover:bg-gray-100" onClick={funsummonth}>ยอดขายเดือน</button>
-                <button className="text-black block px-2  py-2 no-underline hover:bg-gray-100" onClick={funsumyear}>ยอดขายรายปี</button>
+                <button className="text-left text-black block px-2  py-3 no-underline hover:bg-gray-100 w-full " onClick={funsumday}>รายขายวัน</button>
+                <button className="text-left text-black block px-2  py-3 no-underline hover:bg-gray-100 w-full " onClick={funsumweek}>รายสัปดาห์</button>
+                <button className="text-left text-black block px-2  py-3 no-underline hover:bg-gray-100 w-full " onClick={funsummonth}>รายเดือน</button>
+                <button className="text-left text-black block px-2  py-3 no-underline hover:bg-gray-100 w-full " onClick={funsumyear}>รายปี</button>
               </div>
             )}
           </li>

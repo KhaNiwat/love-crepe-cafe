@@ -9,6 +9,7 @@ import Axios from "axios";
 import Styles from "../addanddel/addanddel.module.css";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import { Alert } from "@mui/material";
 
 const dataFromapi = [{ namemenu: "ข้าวผัด", price: 10000 }];
 
@@ -45,15 +46,12 @@ export default function Shownenu() {
                 <div className={styles.boximg}>
                   <img src={img1} alt="img1" />
                 </div>
-                <div className={styles.namemanu}>
-                  <p>{val.Name}</p>
-                </div>
+                <h4>{val.Name}</h4>
                 <div className={styles.container}>
                   <div className={styles.price}>
                     <p>{val.Price} ₩</p>
                   </div>
-                  <div className={styles.quantity}>
-                  </div>
+                  <button className="bt-add" onClick={() => console.log("hi")}>Add</button>
                 </div>
               </div>
             </div>
