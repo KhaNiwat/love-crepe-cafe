@@ -21,6 +21,8 @@ import Cusmenudrink from "./page/Cusmenudrink.jsx"
 import Page_upmenu from "./page/Page_upmenu.jsx";
 import PageSumordertable from "./page/PageSumordertable.jsx"
 import PageServe from "./page/PageServe.jsx";
+import TextToSpeech from './components/TextToSpeech/TextToSpeech.jsx'
+import PageConfirm from "./page/PageConfirm.jsx";
 // เฉพาะ เพจ
 function App() {
   return (
@@ -28,10 +30,10 @@ function App() {
       <Routes>
         <Route path="*" element={<Layout />}>
           <Route Index path="*" element={<Index />} />
-          <Route  path="HomeCustomer" element={<HomeCustomer />} />
-          <Route path="list" element={<Listmenu />} />
+          <Route  path="HomeCustomer/:Table" element={<HomeCustomer />} />
+          <Route path="list/:lang/:table" element={<Listmenu />} />
           <Route  element={<NoPage />} />
-          <Route path="Option" element={<Option />}></Route>
+          <Route path="Option/:lang/:MenuID/:Table" element={<Option />}></Route>
           <Route path="Table_cus/:lang" element={<Table_cus />}></Route>
           <Route path="Pfood_kitchen/:lang" element={<Pfood_kitchen />}></Route>
           <Route path="Drink/:lang" element={<Drink />}></Route>
@@ -40,10 +42,12 @@ function App() {
           <Route path="Pademonthsummary/:lang" element={<Pademonthsummary />}></Route>
           <Route path="Padeweeksummary/:lang" element={<Padeweeksummary />}></Route>
           <Route path="Padeyearsummary/:lang" element={<Padeyearsummary />}></Route>
-          <Route path="menu/:Type_food/:lang" element={<Customernenuall />}></Route>
+          <Route path="menu/:Type_food/:lang/:Table" element={<Customernenuall />}></Route>
           <Route path="Page_upmenu/:lang" element={<Page_upmenu />}></Route>
           <Route path="PageSumordertable/:lang" element={<PageSumordertable />}></Route>
           <Route path="PageServe/:lang" element={<PageServe />}></Route>
+          <Route path="TextToSpeech/:lang" element={<TextToSpeech />}></Route>
+          <Route path="PageConfirm/:lang/:Table" element={<PageConfirm />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>

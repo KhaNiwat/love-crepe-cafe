@@ -18,7 +18,7 @@ const Table = () => {
         onClick={() => alert("Clicked")}
       >
         <EventAvailable />
-        จองคิว
+        Queue
       </button>
       <br />
       <div className="grid grid-cols-4 gap-4">

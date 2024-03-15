@@ -67,55 +67,55 @@ function Dashboard() {
           <li className="mb-3">
             <button className="Dash-bt">
               <a href="" className="text-black no-underline " onClick={ClickTable}>
-                เลือกโต๊ะ
+                Table
               </a>
             </button>
           </li>
           <li className="mb-3">
             <button className="Dash-bt">
               <a href="" className="text-black no-underline" onClick={To_Serve}>
-                พร้อมเสริฟ
+                Serve
               </a>
             </button>
           </li>
           <li className="mb-3">
             <button className="Dash-bt">
               <a href="" className="text-black no-underline" onClick={ClickFood}>
-                ครัวอาหาร
+                Kitchen
               </a>
             </button>
           </li>
           <li className="mb-3">
             <button className="Dash-bt">
               <a href="" className="text-black no-underline" onClick={ClickDashDessert}>
-                ของหวาน
+                Dessert
               </a>
             </button>
           </li>
 
           <li className="mb-3">
             <button className="Dash-bt text-black no-underline"  onClick={ClickDrink}>
-              เครื่องดื่ม
+            Drink   
             </button>
           </li>
 
           <li className="mb-3">
             <button className="Dash-bt text-black no-underline"  onClick={Up_menu}>
-              เพิ่มเมนู
+              Up memu
             </button>
           </li>
           
 
           <li className="mb-3">
             <button className="Dash-bt" onClick={toggleDropdown}>
-              ยอดสรุป <ArrowDropDownIcon/>
+              Revenue <ArrowDropDownIcon/>
             </button>
             {dropdownOpen && (
               <div className=" bg-white w-full shadow-md z-10 Dropdown-content transform transition-all origin-top-right right-0 mt-2">
-                <button className="text-left text-black block px-2  py-3 no-underline hover:bg-gray-100 w-full " onClick={funsumday}>รายขายวัน</button>
-                <button className="text-left text-black block px-2  py-3 no-underline hover:bg-gray-100 w-full " onClick={funsumweek}>รายสัปดาห์</button>
-                <button className="text-left text-black block px-2  py-3 no-underline hover:bg-gray-100 w-full " onClick={funsummonth}>รายเดือน</button>
-                <button className="text-left text-black block px-2  py-3 no-underline hover:bg-gray-100 w-full " onClick={funsumyear}>รายปี</button>
+                <button className="text-left text-black block px-2  py-2 no-underline hover:bg-gray-100 w-full " onClick={funsumday}>Daily</button>
+                <button className="text-left text-black block px-2  py-2 no-underline hover:bg-gray-100 w-full " onClick={funsumweek}>Weekly</button>
+                <button className="text-left text-black block px-2  py-2 no-underline hover:bg-gray-100 w-full " onClick={funsummonth}>Monthly</button>
+                <button className="text-left text-black block px-2  py-2 no-underline hover:bg-gray-100 w-full " onClick={funsumyear}>Yearly</button>
               </div>
             )}
           </li>

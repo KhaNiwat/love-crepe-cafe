@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../../img/food.png";
 import { useParams } from "react-router-dom";
-import { Axios } from "axios";
+import  Axios  from "axios";
 import { useEffect, useState } from "react";
 
 // #1
@@ -12,7 +12,7 @@ const dataFromapi = [
 export default function Foodroom() {
   //แปรตัว
   const { lang } = useParams();
-  const [dt, setdt] = useState(dataFromapi);
+  const [dt, setdt] = useState([]);
 
   useEffect(() => {
     getdatalist(lang);
@@ -20,7 +20,7 @@ export default function Foodroom() {
 
   const getdatalist = async (lang) => {
     try {
-      const res = await Axios.post("http://localhost:5177/sum_month", {
+      const res = await Axios.post("http://localhost:5177/dash_month", {
         lang: lang,
       });
       setdt(res.data);
@@ -36,7 +36,6 @@ export default function Foodroom() {
         <thead>
           <tr>
             <th>ชื่อ</th>
-            <th>ราคา</th>
             <th>จำนวน</th>
             <th>ยอดรวม</th>
           </tr>
@@ -46,9 +45,8 @@ export default function Foodroom() {
             <tbody>
               <tr>
                 <td> {val.Name}</td>
-                <td>{val.amount}</td>
-                <td>{val.price}</td>
-                <td>{val.sum}</td>
+                <td>{val.total_Amount}</td>
+                <td>{val.total_price}</td>
               </tr>
             </tbody>
           );

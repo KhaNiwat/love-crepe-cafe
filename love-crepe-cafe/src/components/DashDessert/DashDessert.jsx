@@ -2,7 +2,7 @@ import React from "react";
 import img from "../../img/food.png";
 import DoneIcon from "@mui/icons-material/Done";
 import { useParams } from "react-router-dom";
-import { Axios } from "axios";
+import  Axios  from "axios";
 import { useEffect, useState } from "react";
 
 const dataFromapi = [
@@ -13,7 +13,7 @@ const dataoption = [{ Des: 1 }, { Des: 1 }, { Des: 1 }];
 
 export default function DashDessert() {
   const { lang } = useParams();
-  const [dt, setDt] = useState(dataFromapi);
+  const [dt, setDt] = useState([]);
   const [dtop, setdtop] = useState(dataoption);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function DashDessert() {
 
   const getDatalist = async (lang) => {
     try {
-      const res = await Axios.post("http://localhost:5177/DashDessert_room", {
+      const res = await Axios.post("http://localhost:5177/crepe_bar", {
         lang: lang,
       });
       setDt(res.data);
@@ -31,17 +31,6 @@ export default function DashDessert() {
     }
   };
 
-  const getDataOption = async (lang,Option) => {
-    try {
-      const res = await Axios.post("http://localhost:5177/food_room", {
-        lang: lang,
-        OptionID : Option
-      });
-      setdtop(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const handleLoopClick = (index) => {
     const newData = [...dt];
@@ -62,35 +51,25 @@ export default function DashDessert() {
         <thead>
           <tr>
             <th>No.</th>
-            <th className="text-center">รูป</th>
-            <th className="text-center">ชื่ออาหาร</th>
-            <th className="text-center">ออเดอร์</th>
-            <th className="text-center">จำนวน</th>
-            <th className="text-center">ออฟชั่น</th>
-            <th className="text-center">เสร็จสิ้น</th>
+            <th className="text-center">Menu</th>
+            <th className="text-center">Table</th>
+            <th className="text-center">Amount</th>
+            <th className="text-center">Option</th>
+            <th className="text-center">Succeed</th>
           </tr>
         </thead>
         <tbody>
           {dt.map((val, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td
-                className="text-center"
-                style={{ width: "80px", height: "80px", objectFit: "cover" }}
-              >
-                <img
-                  src={img}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </td>
-              <td className="text-center">{val.name}</td>
-              <td className="text-center">{val.order}</td>
-              <td className="text-center">{val.amount}</td>
+              <td className="text-center">{val.Name}</td>
+              <td className="text-center">{val.CartID}</td>
+              <td className="text-center">{val.Amount}</td>
+              
               <td className="text-center bg-red-200">
-                {dtop.map((val, index) => (
+                {val.optional.map((val, index) => (
                   <span key={index}>
-                    {String(val.Des)}
+                    {String(val.Description)}
                     <br />
                   </span>
                 ))}

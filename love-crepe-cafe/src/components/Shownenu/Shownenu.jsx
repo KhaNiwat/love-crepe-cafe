@@ -4,23 +4,29 @@ import img1 from "../../img/All.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Axios from "axios";
 import Styles from "../addanddel/addanddel.module.css";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { Alert } from "@mui/material";
+import { Alert, Table } from "@mui/material";
 
 const dataFromapi = [{ namemenu: "ข้าวผัด", price: 10000 }];
 
 export default function Shownenu() {
-  const { lang,Type_food } = useParams();
+  const { lang,Type_food,Table } = useParams();
   const [menulist_us, setmenulist_us] = useState([]);
   const [dt, setdt] = useState(dataFromapi);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getmenulist(lang);
   }, []);
+
+
+  const netxtpage =(e) =>{
+    navigate("/Option/"+lang+"/"+e+"/"+Table);
+  }
 
   const getmenulist = async (lang) => {
     try {
@@ -51,7 +57,7 @@ export default function Shownenu() {
                   <div className={styles.price}>
                     <p>{val.Price} ₩</p>
                   </div>
-                  <button className="bt-add" onClick={() => console.log("hi")}>Add</button>
+                  <button className="bt-add" onClick={() => netxtpage(val.MenuID)}>Add</button>
                 </div>
               </div>
             </div>

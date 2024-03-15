@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../../img/food.png";
 import { useParams } from "react-router-dom";
-import { Axios } from "axios";
+import  Axios  from "axios";
 import { useEffect, useState } from "react";
 
 // #1
@@ -20,7 +20,7 @@ export default function Year() {
 
   const getdatalist = async (lang) => {
     try {
-      const res = await Axios.post("http://localhost:5177/sum_day", {
+      const res = await Axios.post("http://localhost:5177/dash_year", {
         lang: lang,
       });
       setdt(res.data);
@@ -35,18 +35,18 @@ export default function Year() {
       <table class="table">
         <thead>
           <tr>
-            <th>เดือน</th>
+            <th>ชื่อ</th>
             <th>จำนวน</th>
-            <th>ยอดรวม</th>
+            <th>ราคา</th>
           </tr>
         </thead>
         {dt.map((val) => {
           return (
             <tbody>
               <tr>
-                <td> {val.Month}</td>
-                <td>{val.amount}</td>
-                <td>{val.sum}</td>
+                <td> {val.Name}</td>
+                <td>{val.total_Amount}</td>
+                <td>{val.total_price}</td>
               </tr>
             </tbody>
           );

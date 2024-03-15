@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../../img/food.png";
 import { useParams } from "react-router-dom";
-import { Axios } from "axios";
+import  Axios  from "axios";
 import { useEffect, useState } from "react";
 
 // #1
@@ -12,7 +12,7 @@ const dataFromapi = [
 export default function Day() {
   //แปรตัว
   const { lang } = useParams();
-  const [dt, setdt] = useState(dataFromapi);
+  const [dt, setdt] = useState([]);
 
   useEffect(() => {
     getdatalist(lang);
@@ -20,8 +20,9 @@ export default function Day() {
 
   const getdatalist = async (lang) => {
     try {
-      const res = await Axios.post("http://localhost:5177/sum_day", {
+      const res = await Axios.post("http://localhost:5177/dash_day", {
         lang: lang,
+        
       });
       setdt(res.data);
     } catch (error) {
@@ -45,8 +46,8 @@ export default function Day() {
             <tbody>
               <tr>
                 <td> {val.Name}</td>
-                <td>{val.amount}</td>
-                <td>{val.sum}</td>
+                <td>{val.total_Amount}</td>
+                <td>{val.total_price}</td>
               </tr>
             </tbody>
           );

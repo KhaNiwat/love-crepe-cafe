@@ -5,13 +5,14 @@ h3 {
 .box {
     width: 100%;
     padding: 1fr;
-    margin: auto auto;
+    margin: 10px auto;
 }
 
 .card {
     background-color: pink;
     padding: 8px;
     border-radius: 20px;
+    margin: 8px 0;
 }
 .namemanu {
     padding: 2px;
@@ -146,7 +147,7 @@ h3 {
 /* 390px */
 @media only screen and (max-width: 390px) {
     .namemanu{
-        margin:  auto;
+        margin:  1rem;
     }
     .namemanu p {
         text-align: left;
