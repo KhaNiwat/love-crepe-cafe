@@ -22,17 +22,17 @@ code {
 
 @layer components{
   .bt-off{
-    @apply text-white bg-red-200 p-3 grid-cols-3 justify-items-center w-full rounded-lg
+    @apply text-white bg-red-200 p-3 grid-cols-3 justify-items-center w-full rounded-lg font-medium
 
   }
   .bt-on{
-    @apply text-white bg-red-500 p-3 grid-cols-3 justify-items-center w-full rounded-lg
+    @apply text-white bg-red-500 p-3 grid-cols-3 justify-items-center w-full rounded-lg font-medium
   }
   .Dash-bt{
     @apply text-black  bg-white w-28 h-10 
   }
   .bt-add {
-    @apply text-white bg-green-600 p-1 w-full rounded-md font-medium; 
+    @apply text-white bg-green-600 p-3 grid-cols-3 justify-items-center w-full rounded-lg font-medium
   }
   
 }

@@ -11,6 +11,7 @@ export default function Customernenuall() {
   const { lang, Table } = useParams();
 
   const atc = () => {
+    alert("OK")
     navigate("/list/"+lang+"/"+Table);
   };
 
@@ -22,7 +23,7 @@ export default function Customernenuall() {
         <Menugroup />
         <Shownenu />
       </div>
-      <button className="bt-on fixed bottom-1 font-medium" onClick={atc}><ShoppingCartIcon />Order</button>
+      <button className="bt-on fixed bottom-1 font-medium" onClick={atc}>Order</button>
     </>
   );
 }

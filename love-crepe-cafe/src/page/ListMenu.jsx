@@ -73,7 +73,7 @@ export default function Listmenu() {
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>#</th>
+              {/* <th>#</th> */}
               <th>Name</th>
               <th>princ</th>
               <th>amount</th>
@@ -83,19 +83,19 @@ export default function Listmenu() {
             {menulist_us.map((val, key) => {
               return (
                 <tr>
-                  <td>{val.num}</td>
+                  {/* <td>{val.num}</td> */}
                   <td>{val.Name}</td>
                   <td>{val.Price}&nbsp;&nbsp; ₩</td>
                   <td>{val.Amount}</td>
                   <td>
-                    <button onClick={() => {onClickHandle(val.CartID)}}>Delete</button>
+                    <button onClick={() => {onClickHandle(val.CartID)}} className="rounded-lg font-medium bg-red-500 p-2 text-white">Delete</button>
                   </td>
                 </tr>
               );
             })}
           </tbody>
         </Table>
-        <button className='bt-on' onClick={onClickHandle_2}>ยืนยัน</button>
+        <button className='bt-add' onClick={onClickHandle_2}>confirm</button>
       </Container>
     </>
   );

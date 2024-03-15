@@ -82,17 +82,12 @@ export default function DasDrink() {
                 ))}
               </td>
 
-              <td className="text-center">
+              <td className="text-center  ">
                 <button
-                  className="bg-su"
                   onClick={() => handleDoneClick(val.cartID,index)}
-                  style={{
-                    background:
-                      val.status === "finish" ? "green" : "transparent",
-                    color: val.status === "finish" ? "white" : "black",
-                  }}
+                  class="bg-blue-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded"
                 >
-                  <DoneIcon className="bt-su" />
+                  <DoneIcon />
                 </button>
               </td>
             </tr>

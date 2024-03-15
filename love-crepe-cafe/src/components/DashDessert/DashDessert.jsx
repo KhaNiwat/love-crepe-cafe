@@ -50,7 +50,7 @@ export default function DashDessert() {
       <table className="table">
         <thead>
           <tr>
-            <th>No.</th>
+            <th>No.</th> 
             <th className="text-center">Menu</th>
             <th className="text-center">Table</th>
             <th className="text-center">Amount</th>
@@ -77,13 +77,9 @@ export default function DashDessert() {
 
               <td className="text-center">
                 <button
-                  className="bg-gray-300 p-1 w-4/5 rounded-md"
+                  class="bg-blue-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded"
                   onClick={() => handleDoneClick(index)}
-                  style={{
-                    background:
-                      val.status === "finish" ? "green" : "transparent",
-                    color: val.status === "finish" ? "white" : "black",
-                  }}
+                  
                 >
                   <DoneIcon />
                 </button>

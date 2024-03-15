@@ -5,14 +5,14 @@ h3 {
 .box {
     width: 100%;
     padding: 1fr;
-    margin: 10px auto;
+    margin-bottom: 40px;
 }
 
 .card {
     background-color: pink;
     padding: 8px;
     border-radius: 20px;
-    margin: 8px 0;
+    margin: 2px 0;
 }
 .namemanu {
     padding: 2px;
