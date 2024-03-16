@@ -14,8 +14,9 @@ import { Alert, Table } from "@mui/material";
 const dataFromapi = [{ namemenu: "ข้าวผัด", price: 10000 }];
 
 export default function Shownenu() {
-  const { lang,Type_food,Table } = useParams();
+  const { lang,Type_food,table } = useParams();
   const [menulist_us, setmenulist_us] = useState([]);
+  
   const [dt, setdt] = useState(dataFromapi);
   const navigate = useNavigate();
 
@@ -25,7 +26,7 @@ export default function Shownenu() {
 
 
   const netxtpage =(e) =>{
-    navigate("/Option/"+lang+"/"+e+"/"+Table);
+    navigate("/Option/"+lang+"/"+e+"/"+table);
   }
 
   const getmenulist = async (lang) => {

@@ -15,7 +15,7 @@ const dataFromapi = [
 
 export default function Menugroup() {
   const navigate = useNavigate();
-  const { lang,Table } = useParams();
+  const { lang,table } = useParams();
   const [dt, setDt] = useState(dataFromapi);
 
   useEffect(() => {
@@ -35,25 +35,25 @@ export default function Menugroup() {
 
   
   const To_page_cus_all = () =>{ 
-  navigate("/menu/all/"+lang+"/"+Table);
+  navigate("/menu/all/"+lang+"/"+table);
   window.location.reload();
   }
  
   const To_page_food = () =>{
     //redirect("Table_cus/"+lang); 
-    navigate("/menu/food/"+lang+"/"+Table);
+    navigate("/menu/food/"+lang+"/"+table);
     window.location.reload();
   };
 
   
   const To_pade_Dessert = () =>{
-    navigate("/menu/dessert/"+lang+"/"+Table)
+    navigate("/menu/dessert/"+lang+"/"+table)
     window.location.reload();
   }
 
     //ไปยังหน้าของเครื่องดื่ม
     const To_pade_Drink = () =>{
-      navigate("/menu/drink/"+lang+"/"+Table)
+      navigate("/menu/drink/"+lang+"/"+table)
       window.location.reload();
     }
   return (

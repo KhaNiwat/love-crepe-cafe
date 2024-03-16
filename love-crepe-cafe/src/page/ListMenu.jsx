@@ -48,7 +48,10 @@ export default function Listmenu() {
   }
 
   const onClickHandle_2 =  () => {
-     sentOrder();
+    if (menulist_us.length > 0){
+      sentOrder();
+    }
+     
     navigate("/menu/all/"+lang+"/" + table);
 
   }

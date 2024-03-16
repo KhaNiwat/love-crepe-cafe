@@ -8,11 +8,10 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'; // Import the c
 
 export default function Customernenuall() {
   const navigate = useNavigate();
-  const { lang, Table } = useParams();
+  const { lang, table } = useParams();
 
   const atc = () => {
-    alert("OK")
-    navigate("/list/"+lang+"/"+Table);
+    navigate("/list/"+lang+"/"+table);
   };
 
   return (

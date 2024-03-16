@@ -59,7 +59,7 @@ app.post('/getmenu', (req, res) => {
                 res.send(err)
             }
             else {
-                console.log(results)
+                // console.log(results)
                 res.send(results);
             }
         });
@@ -306,7 +306,7 @@ app.post('/addcart',async (req, res) => {
     const string_option = await getOptionall(option_select);
     // console.log(string_option);
     const stoption = JSON.parse(string_option)
-    console.log(stoption)
+    // console.log(stoption)
     const objectsArray = stoption.map(item => JSON.parse(item));
     const jsonString = JSON.stringify(objectsArray);
     // console.log(string_option);
@@ -331,40 +331,35 @@ app.post('/addcart',async (req, res) => {
 
 });
 
-app.post('/order', (req, res) => {
+app.post('/order', async (req, res) => {
     const table = req.body.Table;
     var orderID = 0;
     var pass;
-    var sql = "INSERT INTO `ordertable`(`OrderTable`) VALUES (" + String(table) + ")";
-    try {
-        // console.log(sql);
-        connection.query(sql, (err, results) => {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                pass;
-            }
-        });
-    } catch (err) {
-        pass;
+
+    var fsql1 = await getdatafromsql(`SELECT OrderID FROM ordertable WHERE OrderTable = ${table} AND Status = 1`);
+    if(fsql1.length === 0 ){
+        var sql = "INSERT INTO `ordertable`(`OrderTable`) VALUES (" + String(table) + ")";
+        const insert = await getdatafromsql(sql);
     }
-    orderID = 1;
-    var sql = `SELECT OrderID FROM ordertable WHERE OrderTable = ${table} AND Status = 1`;
-    try {
-        // console.log(sql);
-        connection.query(sql, (err, results) => {
-            if (err) {
-                console.log(err);
-            }
-            else {
-                orderID = results[0].OrderID;
-                processOrder(orderID, table);
-            }
-        });
-    } catch (err) {
-        pass;
-    }
+    var fsql2= await getdatafromsql(`SELECT OrderID FROM ordertable WHERE OrderTable = ${table} AND Status = 1`);
+    // console.log(varfsql2[0].OrderID)
+    orderID = fsql2[0].OrderID;
+    processOrder(orderID, table);
+    // var sql = `SELECT OrderID FROM ordertable WHERE OrderTable = ${table} AND Status = 1`;
+    // try {
+    //     // console.log(sql);
+    //     connection.query(sql, (err, results) => {
+    //         if (err) {
+    //             console.log(err);
+    //         }
+    //         else {
+    //             orderID = results[0].OrderID;
+    //             processOrder(orderID, table);
+    //         }
+    //     });
+    // } catch (err) {
+    //     pass;
+    // }
 
     res.send("ok");
 });
@@ -653,18 +648,11 @@ function processOrder(order, table) {
 
 app.post('/test',async (req,res) =>{
     const cart = req.body.cartID;
-    const ch = await getdatafromsql(`SELECT * FROM cart WHERE CartID = ${cart}`);
-    // console.log(ch)
-    const parsedX = ch.map(item => {
-        // Parse the string into an array of JSON strings
-        const jsonArray = JSON.parse(item.jsOption);
-        // console.log(jsonArray)
-        // Parse each JSON string into an object
-        // Update the item with the parsed array of objects
-        return { ...item, jsOption: jsonArray[1] };
-    });
+    const table = req.body.Table
+    const ch = await getdatafromsql(`SELECT OrderID FROM ordertable WHERE OrderTable = ${table} AND Status = 1`);
+    
 
-    res.send(parsedX);
+    res.send(ch);
 })
 
 app.post("/dash_day",async (req,res) =>{
@@ -711,6 +699,7 @@ app.post("/dash_month",async (req,res) =>{
 
 app.post("/dash_year",async (req,res) =>{
     const lang = req.body.lang;
+    
 
     const currentDate = new Date();
     const year = currentDate.getFullYear();
@@ -728,6 +717,11 @@ app.post("/dash_year",async (req,res) =>{
 
     const ch = await getdatafromsql(sql);
     res.send(ch)
+})
+
+app.post("/getTable",async(req,res) =>{
+    const ch = await getdatafromsql("SELECT * FROM `table` WHERE 1");
+    res.send(ch);
 })
 
 

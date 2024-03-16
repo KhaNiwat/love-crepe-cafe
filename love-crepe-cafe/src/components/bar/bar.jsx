@@ -99,11 +99,11 @@ function Dashboard() {
             </button>
           </li>
 
-          <li className="mb-3">
+          {/* <li className="mb-3">
             <button className="Dash-bt text-black no-underline"  onClick={Up_menu}>
               Up memu
             </button>
-          </li>
+          </li> */}
           
 
           <li className="mb-3">

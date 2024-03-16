@@ -19,7 +19,7 @@ const dataFromapi_option = [
 ];
 
 export default function Coption() {
-  const { lang, MenuID, Table } = useParams();
+  const { lang, MenuID, table } = useParams();
   const [dt, setDt] = useState([]);
   const [dtoption, setDtoption] = useState([]);
   const [quantity, setQuantity] = useState(1); // เพิ่ม state สำหรับจำนวนสินค้า
@@ -69,7 +69,7 @@ export default function Coption() {
   const onClickHandle = () => {
     addcart();
 
-    navigate("/menu/all/" + lang + "/" + Table);
+    navigate("/menu/all/" + lang + "/" + table);
   };
 
   const onclick_add = () =>{
@@ -91,7 +91,7 @@ export default function Coption() {
         MenuID: MenuID,
         Amount: quantity,
         Option: dtoption,
-        Table: Table,
+        Table: table,
       });
       console.log(res.data);
     } catch (error) {

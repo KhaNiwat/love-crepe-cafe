@@ -7,17 +7,17 @@ import { useNavigate, useParams  } from 'react-router-dom';
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const { lang, Table } = useParams();
+  const { lang, table } = useParams();
   const [showSideNav, setShowSideNav] = useState(false);
 
   const toggleSideNav = () => {
     setShowSideNav(prevState => !prevState);
   };
   const ClickPage = () =>{
-    navigate("/menu/all/"+lang+"/"+Table);
+    navigate("/menu/all/"+lang+"/"+table);
   };
   const atc = async(e) => {
-    await navigate("/list/"+lang+"/"+Table);
+    await navigate("/PageConfirm/"+lang+"/"+table);
   };
 
   const closeNav = () => {
