@@ -1,9 +1,11 @@
 import logo from "../img/All.png";
 import css from "../components/css/option.module.css";
 import Coption from "../components/Coption/Coption.jsx";
+import Navbar from "../components/Navbar/Navbar.jsx";
 function option() {
   return (
     <>
+      <Navbar />
       <div className={css.displaybig}>
         <div className="grid grid-cols-2">
           {/* Left */}
@@ -16,7 +18,6 @@ function option() {
             <Coption />
           </div>
           </div>
-          
         </div>
       </div>
 

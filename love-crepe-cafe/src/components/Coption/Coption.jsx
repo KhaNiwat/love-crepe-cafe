@@ -4,20 +4,6 @@ import Axios from "axios";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 
-const dataFromapi = [{ Name_menu: "พัดไทย", price: 20000, CheckBox: "" }];
-const dataFromapi_option = [
-  {
-    OptionID: 1,
-    Description: "test_1_KR",
-    Status: 0,
-  },
-  {
-    OptionID: 2,
-    Description: "Test_2_KR",
-    Status: 0,
-  },
-];
-
 export default function Coption() {
   const { lang, MenuID, table } = useParams();
   const [dt, setDt] = useState([]);
@@ -72,17 +58,17 @@ export default function Coption() {
     navigate("/menu/all/" + lang + "/" + table);
   };
 
-  const onclick_add = () =>{
-    setQuantity(quantity+1);
-  }
+  const onclick_add = () => {
+    setQuantity(quantity + 1);
+  };
 
-  const onClick_delete = () =>{
-    if(quantity === 1){
+  const onClick_delete = () => {
+    if (quantity === 1) {
       setQuantity(1);
-    }else{
-      setQuantity(quantity-1);
+    } else {
+      setQuantity(quantity - 1);
     }
-  }
+  };
 
   const addcart = async () => {
     try {
@@ -134,11 +120,10 @@ export default function Coption() {
               </button>
             </div>
             <br />
-            <footer>
-            <button type="submit" className="bt-add p-2" onClick={onClickHandle}>
-              ยืนยัน
-            </button>
-            </footer>
+            
+            <button type="submit" class="bt-confrim " onClick={onClickHandle}>
+  {lang === "TH" ? "ยืนยัน" : lang === "EN" ? "Confirm" : lang === "CN" ? "确认" : lang === "KR" ? "확인" : ""}
+</button>
             
           </div>
         </div>

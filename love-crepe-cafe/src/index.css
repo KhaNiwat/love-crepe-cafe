@@ -1,11 +1,12 @@
-:root{
-  --primary-color:#DF5C6C;
-  --foreign-color:#FFC0CB;
-  --a1-color:#A1A1A1;
+:root {
+  --primary-color: rgb(223, 93, 108);
+  --foreign-color: #FFC0CB;
+  --a1-color: #A1A1A1;
 }
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Kanit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,23 +17,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-  .bt-off{
-    @apply text-white bg-red-200 p-3 grid-cols-3 justify-items-center w-full rounded-lg font-medium
-
+@layer components {
+  .bt-off {
+    @apply text-white bg-red-200 p-3 grid-cols-3 justify-items-center w-full rounded-lg font-medium;
   }
-  .bt-on{
-    @apply text-white bg-red-500 p-3 grid-cols-3 justify-items-center w-full rounded-lg font-medium
+  .bt-on {
+    @apply text-white bg-red-500 p-3 grid-cols-3 justify-items-center w-full rounded-lg font-medium;
   }
-  .Dash-bt{
-    @apply text-black  bg-white w-28 h-10 
+  .Dash-bt {
+    @apply text-black bg-white w-28 h-10;
   }
   .bt-add {
-    @apply text-white bg-green-600 p-3 grid-cols-3 justify-items-center w-full rounded-lg font-medium
+    @apply text-white bg-green-600 p-3 grid-cols-3 justify-items-center w-full rounded-lg font-medium;
   }
-  
+  .bt-confirm {
+    @apply text-white bg-green-600 p-3 grid-cols-3 justify-items-center w-full rounded-lg font-medium;
+  }
 }

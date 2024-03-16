@@ -1,3 +1,4 @@
+
 h3 {
     padding: 0 10px;
 }
@@ -9,11 +10,13 @@ h3 {
 }
 
 .card {
-    background-color: pink;
+    background-color: rgb(249, 223, 223);
+    box-shadow: 0px 4px 8px rgb(223, 93, 108); /* เงาสีชมพู */
     padding: 8px;
     border-radius: 20px;
     margin: 2px 0;
 }
+
 .namemanu {
     padding: 2px;
 }

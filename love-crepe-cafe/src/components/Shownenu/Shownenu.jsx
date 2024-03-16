@@ -44,7 +44,6 @@ export default function Shownenu() {
 
   return (
     <Container fluid>
-      <h3>All menu</h3>
       <Row>
         {menulist_us.map((val, index) => (
           <Col key={index}>
@@ -58,7 +57,7 @@ export default function Shownenu() {
                   <div className={styles.price}>
                     <p>{val.Price} ₩</p>
                   </div>
-                  <button className="bt-add" onClick={() => netxtpage(val.MenuID)}>Add</button>
+                  <button className="text-white bg-green-600 p-1 justify-items-center w-full rounded-lg font-medium " onClick={() => netxtpage(val.MenuID)}><AddCircleIcon /></button>
                 </div>
               </div>
             </div>

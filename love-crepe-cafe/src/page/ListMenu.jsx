@@ -91,14 +91,19 @@ export default function Listmenu() {
                   <td>{val.Price}&nbsp;&nbsp; ₩</td>
                   <td>{val.Amount}</td>
                   <td>
+                    <center>
                     <button onClick={() => {onClickHandle(val.CartID)}} className="rounded-lg font-medium bg-red-500 p-2 text-white">Delete</button>
+                    </center>
+                    
                   </td>
                 </tr>
               );
             })}
           </tbody>
         </Table>
-        <button className='bt-add' onClick={onClickHandle_2}>confirm</button>
+        <button className='bt-add' onClick={onClickHandle_2}>
+        {lang === 'TH' ? 'ยืนยัน' : lang === 'EN' ? 'Confirm' : lang === 'CN' ? '确认' : lang === 'KR' ? '확인하다' : ''}
+        </button>
       </Container>
     </>
   );

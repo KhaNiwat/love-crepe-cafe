@@ -43,7 +43,7 @@ export default function PageConfirm() {
   return (
     <>
       <Navbar />
-      <Container className="my-2">
+      <Container className="mt-4 p-2">
         <h3 className="mx-auto">PageConfirm</h3>
         <Table striped bordered hover>
           <thead>
